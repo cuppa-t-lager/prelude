@@ -1,0 +1,10 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: <cfif>
+# key: cfif
+# group: coldfusion
+# --
+<cfif ( $1 ) >
+$2
+</cfif>
+
+$0

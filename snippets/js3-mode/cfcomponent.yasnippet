@@ -1,0 +1,38 @@
+# -*- mode: snippet -*-
+# name: component
+# key: cfcomponent
+# group: coldfusion
+# --
+/**
+ * @displayname        $1
+ * @hint               $2
+ * @accessors          ${3:false}
+ * @persistent         ${4:false}
+ * @table              ${5:tablename}
+ * @output             ${6:false}
+ * @returntype         {7:$(yas-choose-value '("any" "array" "binary" "boolean" "component" "guid" "numeric" "query" "string" "struct" "uuid" "variablename" "void" "xml"))returntype}
+ * @extends            ${8:component path}
+ */
+component {
+
+	/* properties */
+	property name = "$9"  type = "{10:$(yas-choose-value '("any" "array" "binary" "boolean" "component" "guid" "numeric" "query" "string" "struct" "uuid" "variablename" "void" "xml"))}" default = "$11" ;
+
+
+	/**
+	 * @displayname    init
+	 * @access         public
+	 * @output         false
+	 * @hint           I am the constructor
+	 * @returnType
+	 */
+	function init(
+
+	) {
+
+
+	}
+
+	$0
+
+}

@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name: inArray
+# key: inArray
+# group: jQuery
+# --
+$.inArray( "$0", {$1})

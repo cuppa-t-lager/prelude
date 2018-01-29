@@ -1,0 +1,17 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: selectData
+# key: prsd
+# group: preside
+# --
+selectData(
+    objectName							= "${1:objectName}"
+  , id											= "${2:id}"
+  , selectFields						= [$3]
+  , filter									= {$4}
+  , struct  filterParams    = {$5}
+  , array   extraFilters    = {$6}
+  , orderBy									= "$7"
+  , groupBy									= "$8"
+) ;
+
+$0

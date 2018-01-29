@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : prevall
+# key : prevall
+# group: jQuery
+# --
+prevAll($0)

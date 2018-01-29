@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: content dump
+# key: cfcodu
+# group: coldfusion
+# --
+content type="text/html";
+writeDump(var="#$1#", top="${2:10}", label="${3:$1}");
+${0:abort;}

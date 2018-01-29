@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: buildAndRunDevelopment.sh
+# group: concrete
+# --
+#!/usr/bin/env bash
+echo "Building the CP3 Docker image"
+container_name="cp3-development-\${RANDOM\}"
+image_name="cp3"
+docker build -t \$\{image_name\} .
+mkdir -p reports
+echo "Starting..."
+docker run -it --rm --name \$\{container_name\} \
+       -p 8080:8080 -p 1443:1443 \
+       -v "\$\{PWD\}:/app" \
+       -v "\$\{PWD\}/../password-lgk:/usr/share/tomcat7/certs/" \
+       -v "\$\{PWD\}/reports:/reports" \
+       \$\{image_name\}

@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : undelegate
+# key : undelegate
+# group: jQuery
+# --
+.undelegate($0, $1, $2);

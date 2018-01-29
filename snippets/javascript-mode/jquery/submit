@@ -1,0 +1,9 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : submit
+# key : submit
+# group: jQuery
+# --
+submit(function( event ) {
+  console.debug( "Handler for .submit() called." );
+  event.preventDefault();
+});

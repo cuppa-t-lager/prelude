@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: function
+# key: cffu
+# group: coldfusion
+# --
+/**
+* @displayname    $1
+* @access         ${2:$$(yas-choose-value '("private" "package" "public" "remote"))access}
+* @output         ${3:false}
+* @hint           $4
+* @returnType     ${5:$$(yas-choose-value '("any" "array" "binary" "boolean" "component" "guid" "numeric" "query" "string" "struct" "uuid" "variablename" "void" "xml"))returntype}
+*/
+function ${1:functionname}(
+	$0
+) {
+
+
+}

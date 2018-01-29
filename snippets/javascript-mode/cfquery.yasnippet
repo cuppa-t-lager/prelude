@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: new query()
+# key: cfqu
+# group: coldfusion
+# --
+var q = new Query();
+q.setDatasource(${1:REQUEST.datasource}) ;
+q.setName("$2") ;
+q.setSQL("$3") ;
+q.addParam(name="$4", value="#$5#", cfsqltype="${6:cf_sql_varchar}") ;
+
+var q$2 = q.execute().getResult() ;
+
+$0

@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : wrap
+# key : wrap
+# group: jQuery
+# --
+.wrap($0)

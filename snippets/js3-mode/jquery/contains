@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : contains
+# key : contains
+# group: jQuery
+# --
+contains($0)

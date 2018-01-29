@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : appendTo
+# key : appendTo
+# group: jQuery
+# --
+appendTo('${1:selector expression}')

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: preside property
+# key: prprop
+# group: preside
+# --
+property name="$1"  type="${2:$$(yas-choose-value '("any" "array" "binary" "boolean" "component" "date" "guid" "numeric" "query" "string" "struct" "uuid" "variableName" "xml" "a component name"))string}"  dbtype="${3:$$(yas-choose-value '("bit" "tinyint" "boolean" "smallint" "mediumint" "int" "bigint" "decimal" "float" "double" "date" "datetime" "timestamp" "time" "year" "varchar" "tinytext" "text" "mediumtext" "longtext"))varchar}"  required="$4"  $0  ;

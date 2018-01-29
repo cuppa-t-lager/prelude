@@ -1,0 +1,33 @@
+# -*- mode: snippet -*-
+# name: component
+# key: tbco
+# group: testbox
+# --
+component extends="testbox.system.BaseSpec" {
+
+	function run(){
+
+	    beforeEach(function() {
+
+        });
+        afterEach(function() {
+
+        });
+
+
+		describe( "$1", function() {
+
+			it( "$2", function() {
+
+                var data = $3;
+
+				expect( data ).toBeTypeOf( 'numeric' );
+                expect( data ).toBeEmpty( );
+
+			} );
+
+        } );
+
+	}
+
+}

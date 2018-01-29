@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: <cfheader />
+# key: cfheader
+# group: coldfusion
+# --
+<cfheader name="$1"
+					value="$2"
+					charset="${3:$$(yas-choose-value '("utf-8" "iso-8859-1" "windows-1252" "us-ascii" "shift_jis" "iso-2022-jp" "euc-jp" "euc-kr" "big5" "euc-cn" "utf-16"))character set}"
+					statusCode="$4"
+					statusText="$5" />
+
+$0

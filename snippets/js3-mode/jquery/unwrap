@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : unwrap
+# key : unwrap
+# group: jQuery
+# --
+unwrap($0)

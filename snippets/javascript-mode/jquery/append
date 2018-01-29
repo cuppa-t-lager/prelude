@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : append
+# key : append
+# group: jQuery
+# --
+append($0)

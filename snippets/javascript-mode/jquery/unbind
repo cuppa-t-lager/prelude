@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : unbind
+# key : unbind
+# group: jQuery
+# --
+unbind()

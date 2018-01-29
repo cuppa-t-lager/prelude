@@ -1,0 +1,8 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : hide
+# key : hide
+# group: jQuery
+# --
+hide( $0, function() {
+	{$1//Stuff to do *after* the animation takes place};
+});

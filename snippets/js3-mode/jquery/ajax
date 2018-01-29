@@ -1,0 +1,13 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name: ajax
+# key: ajax
+# group: jQuery
+# --
+$.ajax({
+    type:  "$0",
+    url:   "$1",
+    data:   {$2},
+})
+  .done(function(msg){
+      // do struff with returned data
+  });

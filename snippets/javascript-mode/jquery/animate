@@ -1,0 +1,13 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : animate
+# key : animate
+# group: jQuery
+# --
+animate({
+  $0,
+  $1,
+  $2,
+}, $3, #time
+ function(){
+ // completion
+})

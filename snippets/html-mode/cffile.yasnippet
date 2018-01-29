@@ -1,0 +1,16 @@
+# -*- mode: snippet;-*-
+# name: <cffile />
+# key: cffile
+# group: coldfusion
+# --
+<cffile
+		action = "${1:$$(yas-choose-value '("append" "copy" "delete" "move" "read" "readBinary" "upload" "uploadAll" "write"))read}"
+		file = "${2:full path name}"
+		destination = "${3:full path name}"
+		source = "${4:full path name}"
+		attributes = "${5:ile attributes list}"
+		mode = "${6:ile attributes list}"
+		fixnewline = "${7:$$(yas-choose-value '("yes" "no"))no}"
+		/>
+
+$0

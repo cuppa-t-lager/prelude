@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name: this
+# key: this
+# group: jQuery
+# --
+$(this).$0

@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : prevuntil
+# key : prevuntil
+# group: jQuery
+# --
+prevUntil($0, $1)

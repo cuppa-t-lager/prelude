@@ -1,0 +1,6 @@
+ contributor Sunil Williams <sunil@sunil.co.nz>
+# name : extend
+# key :  extend
+# group: jQuery
+# --
+$.extend({}, object1, object2);

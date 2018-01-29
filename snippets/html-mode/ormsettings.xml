@@ -1,0 +1,20 @@
+﻿# -*- mode: snippet; require-final-newline: nil -*-
+# name: ormsettings
+# key: orms
+# group: coldfusion/orm
+# --
+// Mappings    
+//this.mappings["/"] = COLDBOX_APP_ROOT_PATH;    
+	    
+// ORM Settings    
+this.ormEnabled 	  = true;    
+this.datasource		  = "${1:#REQUEST.dataource#}";    
+this.ormSettings	  = {    
+	cfclocation = "$${CFCLocation}",    
+	dialect 	= "$${Dialect:DB2|DB2AS400|DB2OS390|Derby|PostgreSQL|MySQL|MySQLwithInnoDB|MySQLwithMyISAM|Oracle8i|Oracle9i|Oracle10g|Sybase|SybaseAnywhere|MicrosoftSQLServer|Informix}",    
+	dbcreate	= "$${DB Create:none|update|dropcreate}",
+	logSQL 		= $${Log SQL:true|false},    
+	flushAtRequestEnd = $${Flush At Request End:false|true},    
+	autoManageSession = $${Auto Manage Session:false|true},
+	eventHandling 	  = $${Event Handling: true|false}	
+};

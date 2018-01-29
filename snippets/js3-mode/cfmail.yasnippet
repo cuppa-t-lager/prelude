@@ -1,0 +1,18 @@
+# -*- mode: snippet;-*-
+# name: new mail()
+# key: cfma
+# group: coldfusion
+# --
+var mail = new mail() ;
+	mail.setFrom( "$1" );
+	mail.setTo( "${2:comma-delimited list}" );
+	mail.setBCC( "$3" );
+	mail.setSubject( "$4" );
+	mail.setType( "${5:TEXT}" );
+	saveContent variable="emailContent" {
+		writeOutput("
+$6
+		") ;
+	}
+	mail.addPart( type="text", charset="utf-8", body="#emailContent#" );
+	mail.send() ;

@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : width
+# key : width
+# group: jQuery
+# --
+width($0)

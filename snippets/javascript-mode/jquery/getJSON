@@ -1,0 +1,17 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name: getJSON
+# key: getJSON
+# group: jQuery
+# --
+$.getJSON(
+    "${0:URI}",
+    function() {
+        // doStuff with data
+    })
+    .done(function(){
+    })
+    .fail(function(){
+    })
+    .always(function() {
+    console.log( "complete" );
+  });

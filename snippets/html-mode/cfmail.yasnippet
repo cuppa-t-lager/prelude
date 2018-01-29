@@ -1,0 +1,15 @@
+# -*- mode: snippet;-*-
+# name: <cfmail />
+# key: cfmail
+# group: coldfusion
+# --
+<cfmail
+from = "$1"
+to = "${2:comma-delimited list}"
+cc = "$3"
+subject = "$4"
+type = "${5:TEXT}"> 
+ 
+$1
+ 
+</cfmail>

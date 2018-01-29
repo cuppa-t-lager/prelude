@@ -1,0 +1,12 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: selectManyToManyData
+# key: prsmtm
+# group: preside
+# --
+public query function selectManyToManyData(
+      required "${1:objectName}"
+    , required "${2:propertyName}"
+    , selectFields = ["$3"]
+    , orderBy      = ""
+)
+$0

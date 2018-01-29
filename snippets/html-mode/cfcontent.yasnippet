@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: <cfcontent />
+# key: cfco
+# group: coldfusion
+# --
+<cfcontent
+		deleteFile = "${1:$$(yas-choose-value '("yes" "no"))no}"
+		file = "${2:filename}"
+		reset = "${3:$$(yas-choose-value '("yes" "no"))no}"
+		type = "${4:$$(yas-choose-value '("text/html" "text/plain" "image/jpeg" "utf-8" "iso-8859-1" "windows-1252" "us-ascii" "shift_jis" "iso-2022-jp" "euc-jp" "euc-kr" "big5" "euc-cn" "utf-16" "application/x-shockwave-flash" "application/msword"))no}"
+		variable = ${5:variable name}" />

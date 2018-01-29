@@ -1,0 +1,8 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : select
+# key : select
+# group: jQuery
+# --
+select(function() {
+  alert( "Handler for .select() called." );
+})

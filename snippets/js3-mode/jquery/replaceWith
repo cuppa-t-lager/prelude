@@ -1,0 +1,8 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : replaceWith
+# key : replaceWith
+# group: jQuery
+# --
+replaceWith(function(index, currentContents) {
+  ${1:return ${2:something};}
+})

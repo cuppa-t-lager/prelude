@@ -1,0 +1,8 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : delegate
+# key : delegate
+# group: jQuery
+# --
+delegate( $0, function() {
+   $1
+});

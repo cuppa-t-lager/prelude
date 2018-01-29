@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : find
+# key : find
+# group: jQuery
+# --
+find('${1:selector expression}')

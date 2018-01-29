@@ -1,0 +1,36 @@
+# -*- mode: snippet -*-
+# name: Create foreign key on table
+# key: sqlcfk
+# --
+/* Add FK to FK_${1:foreign key table}_${2:primary key table} */
+IF (NOT EXISTS
+	(
+		SELECT 1
+		FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+		WHERE TABLE_NAME='$1'
+		AND CONSTRAINT_NAME='FK_$1_$2'
+		AND CONSTRAINT_TYPE='FOREIGN KEY'
+
+	)
+)
+BEGIN
+
+	UPDATE [dbo].[$1]
+	set ${3:foreign key column} = NULL
+	WHERE ${4:primary key column} in
+	(
+		SELECT
+		_.$4
+		FROM [dbo].[$1] _ left join [dbo].[$2] __
+			on (__.$4 = _.$3)
+		WHERE __.$4 IS NULL
+	) ;
+
+	ALTER TABLE [dbo].[$1]
+	ADD CONSTRAINT FK_$1_$2
+	FOREIGN KEY ($3) references $2($4) ;
+END
+
+GO
+
+$0

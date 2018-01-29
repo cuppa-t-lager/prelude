@@ -1,0 +1,8 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : change
+# key : change
+# group: jQuery
+# --
+change(${1:function() {
+	${0:// Act on the event}
+}});
