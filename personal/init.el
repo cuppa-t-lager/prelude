@@ -8,7 +8,7 @@
 (setq imenu-auto-rescan t)
 (show-paren-mode 1)
 
-;;(set-default 'truncate-lines t)
+(set-default 'truncate-lines nil)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; imenu html mode                                                             ;;
@@ -132,10 +132,11 @@ When the index is 0 the entire text that matches regexp appears."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-unset-key (kbd "H-s-g"))
 (use-package dumb-jump
-  :bind (("M-s-g" . dumb-jump-go)
+  :bind (("M-s-o" . dumb-jump-go-other-window)
+		 ("M-s-g" . dumb-jump-go)
+		 ("M-s p" . dumb-jump-go-prompt)
          ("M-s-b" . dumb-jump-back)
-         ("M-s-q" . dumb-jump-quick-look)
-         ("M-s-o" . dumb-jump-go-other-window))
+         ("M-s-q" . dumb-jump-quick-look))
   :config (setq dumb-jump-selector 'helm) ;; (setq dumb-jump-selector 'ivy)
   (add-hook 'dumb-jump-after-jump-hook 'recenter-top-bottom)
   :ensure)
@@ -170,7 +171,8 @@ When the index is 0 the entire text that matches regexp appears."
 (setq avy-background t)
 (setq auto-dim-other-buffers-mode t)
 
-
+(eval-after-load "sql"
+  (load-library "sql-indent"))
 
 
 
@@ -225,7 +227,8 @@ When the index is 0 the entire text that matches regexp appears."
 ;;; hilit-line
 ;;(global-hl-line-mode 1)
 ;;(set-face-background 'hl-line "SteelBlue4")
-(set-face-attribute 'region nil :background "SteelBlue4")
+;;(set-face-attribute 'region nil :background "SteelBlue4")
+(set-face-attribute 'region nil :background "IndianRed3")
 (setq linum-format "%d")
 (set-cursor-color "Yellow")
 
@@ -258,6 +261,9 @@ When the index is 0 the entire text that matches regexp appears."
 
 ;; start maximised (cross-platf)
 (add-hook 'window-setup-hook 'toggle-frame-maximized t)
+
+;; hide scroll bars
+(scroll-bar-mode -1)
 
 ;; Recenter after every isearch-forward
 (defadvice

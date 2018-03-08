@@ -3,5 +3,6 @@
 # key: cfdu
 # group: coldfusion
 # --
-writeDump(var="#$1#", top="${2:10}", label="${3:$1}");
+content type="text/html" reset = "yes" ;
+writeDump(var="#${1:ARGUMENTS}#", top="${2:10}", label="${3:$1}");
 ${0:abort;}

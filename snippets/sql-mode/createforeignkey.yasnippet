@@ -3,16 +3,14 @@
 # key: sqlcfk
 # --
 -----------------------------------------------------------------------------------------------------
------------- Add Foreign Key to ${1:Foreign key table} pointing to ${2:Primary key table} ----------
+------------ Add Foreign Key to ${1:Foreign key table} pointing to ${2:Primary key table} -----------
 -----------------------------------------------------------------------------------------------------
 IF (NOT EXISTS
 	(
-		SELECT 1
-		FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
-		WHERE TABLE_NAME='$1'
-		AND CONSTRAINT_NAME='FK_$1_$2'
-		AND CONSTRAINT_TYPE='FOREIGN KEY'
-
+		SELECT *
+		FROM sys.foreign_keys
+		WHERE object_id = OBJECT_ID(N'[dbo].[$1]')
+		AND parent_object_id = OBJECT_ID(N'[dbo].[$2]')
 	)
 )
 BEGIN
