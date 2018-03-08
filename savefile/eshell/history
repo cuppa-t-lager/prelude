@@ -1,0 +1,31 @@
+ls
+ls -al
+cd ../../
+-rw-r--r--   1 john.nicola    OFFICE\D  17120 2017-11-09 09:11 a.../../jax.cfc
+cd ../../  
+cd ../
+cd concrete-platform
+cd ../kube-mini_cp3/
+l
+ls
+./startup.sh 
+cd ../../
+cd ../../
+ls
+./buildAndRunDevelopment.sh 
+cd../../
+cd ./../
+cd ../../
+cd ../../
+cd concrete-platform
+ls
+./buildAndRunDevelopment.sh 
+./buildAndRunDevelopment.sh 
+git branch
+git branch
+git diff -w develop feature/SUPPORT-3175-broken-link
+ls
+cd ../../
+cd ../../
+git branch
+git diff -w   hotfix/MAN-233-clear-deadline-calendar-cache-when-editing-a-job origin/hotfix/MAN-233-clear-deadline-calendar-cache-when-editing-a-job

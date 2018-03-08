@@ -1,0 +1,70 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("SubscriptionEmailService.cfc"
+ (filename . "~/sites/concrete-platform/CP2/core/objects/subscriptions/SubscriptionEmailService.cfc")
+ (front-context-string . "	private compone")
+ (rear-context-string . "ientId\n		);\n	}\n\n")
+ (position . 903))
+("server.json"
+ (filename . "~/sites/concrete-platform/server.json")
+ (front-context-string . ":{\n            \"")
+ (rear-context-string . ",\n        \"http\"")
+ (position . 208))
+("buildAndRunDevelopment.sh"
+ (filename . "~/sites/concrete-platform/buildAndRunDevelopment.sh")
+ (front-context-string . "#!/usr/bin/env b")
+ (rear-context-string)
+ (position . 1))
+("Application.cfc"
+ (filename . "~/sites/concrete-platform/CP2/Application.cfc")
+ (front-context-string . "ostName  = ListF")
+ (rear-context-string . "jects.app();\n		h")
+ (position . 69))
+("data"
+ (filename . "~/sites/concrete-platform/CP2/core/application/jobManagement/templates.cfm")
+ (front-context-string . "\n						</th>\n			")
+ (rear-context-string . "#dspUserColumns#")
+ (position . 2149))
+("hosts"
+ (filename . "/sudo:root@concreteadmins-MacBook-Pro.local:/etc/hosts")
+ (front-context-string . "##\n# Host Databa")
+ (rear-context-string)
+ (position . 1))
+("mymenu.el"
+ (filename . "~/.emacs.d/personal/mymenu.el")
+ (front-context-string . ";; Creating a ne")
+ (rear-context-string)
+ (position . 1))
+("getJobManagementRecords"
+ (filename . "~/sites/concrete-platform/CP2/core/objects/jobManagement/database.cfc")
+ (front-context-string . "\" access=\"public")
+ (rear-context-string . "anagementRecords")
+ (position . 9539))
+("getDeadlinesByFilter"
+ (filename . "~/sites/concrete-platform/CP2/core/objects/jobManagement/database.cfc")
+ (front-context-string . "<cffunction name")
+ (rear-context-string . "cffunction>\n\n\n\n	")
+ (position . 19979))
+("custom.el"
+ (filename . "~/.emacs.d/personal/custom.el")
+ (front-context-string . "y-dots t)\n '(js3")
+ (rear-context-string . "as t)\n '(js3-laz")
+ (position . 1172))
+("mykeycommands.el"
+ (filename . "~/.emacs.d/personal/mykeycommands.el")
+ (front-context-string . ";;(global-unset-")
+ (rear-context-string)
+ (position . 1))
+("myfunctions.el"
+ (filename . "~/.emacs.d/personal/myfunctions.el")
+ (front-context-string . ";;;;;;;;;;;;;;;;")
+ (rear-context-string)
+ (position . 1))
+("init.el"
+ (filename . "~/.emacs.d/personal/init.el")
+ (front-context-string . "\n '(js3-indent-d")
+ (rear-context-string . "azy-operators t)")
+ (position . 193))
+)
