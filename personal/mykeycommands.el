@@ -104,11 +104,11 @@
 (global-set-key (kbd "C-x C-e")             'eval-last-sexp)
 (global-set-key (kbd "C-c <backspace>")     'crux-kill-line-backwards)
 (global-set-key (kbd "C-x 4 t")             'crux-transpose-windows)
-(global-set-key (kbd "H-s-r")               'find-file-in-repository)            ;;r
-(global-set-key (kbd "H-s-p")               'find-file-in-project)               ;;p
-(global-set-key (kbd "H-s-s")               'find-file-in-project-by-selected)   ;;s
+(global-set-key (kbd "M-s-r")               'find-file-in-repository)            ;;r
+(global-set-key (kbd "M-s-p")               'find-file-in-project)               ;;p
+(global-set-key (kbd "M-s-s")               'find-file-in-project-by-selected)   ;;s
 (global-set-key (kbd "M-s-f")               'ffap)
-(global-set-key (kbd "H-s-~")               'find-file-with-similar-name)
+(global-set-key (kbd "M-s-~")               'find-file-with-similar-name)
 (global-set-key (kbd "M-s-i")				'imenu) ;                            ;;i
 ;;(global-set-key (kbd "M-s-o")             'other-frame) ;                      ;;o
 

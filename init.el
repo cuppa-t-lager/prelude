@@ -117,7 +117,7 @@ by Prelude.")
 (when (eq system-type 'darwin)
   (require 'prelude-osx))
 
-(message "Loading Prelude's modules...")
+;;(message "Loading Prelude's modules...")
 
 ;; the modules
 (if (file-exists-p prelude-modules-file)

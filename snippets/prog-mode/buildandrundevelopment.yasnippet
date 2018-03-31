@@ -10,8 +10,9 @@ docker build -t \$\{image_name\} .
 mkdir -p reports
 echo "Starting..."
 docker run -it --rm --name \$\{container_name\} \
-       -p 8080:8080 -p 1443:1443 \
+       -p 8080:8080 -p 8443:8443 \
        -v "\$\{PWD\}:/app" \
        -v "\$\{PWD\}/../password-lgk:/usr/share/tomcat7/certs/" \
        -v "\$\{PWD\}/reports:/reports" \
+	   -v "\$\{PWD}/../../artifacts:/root/.CommandBox/artifacts" \
        \$\{image_name\}

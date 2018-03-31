@@ -1,1 +1,1 @@
-("~/prelude/" "~/sites/concrete-platform/" "~/sites/cp3-db-release-scripts/" "~/emacs-master/" "~/sites/concrete-platform_copy/")
+("~/sites/concrete-platform/" "~/prelude/" "~/sites/cp3-db-release-scripts/" "~/emacs-master/" "~/sites/concrete-platform_copy/")
