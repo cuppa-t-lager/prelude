@@ -1,0 +1,8 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : dbclick
+# key : dbclick
+# group: jQuery
+# --
+dblclick(${1:function() {
+	${0:// Act on the event}
+}});

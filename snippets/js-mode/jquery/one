@@ -1,0 +1,8 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : one
+# key : one
+# group: jQuery
+# --
+one('${1:event name}', function(${2:event}) {
+	${0:// Act on the event once}
+});

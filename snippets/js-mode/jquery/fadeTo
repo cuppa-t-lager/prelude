@@ -1,0 +1,8 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : fadeTo
+# key : fadeTo
+# group: jQuery
+# --
+fadeTo( $0, $1 , function(){
+	// completion callback
+} )

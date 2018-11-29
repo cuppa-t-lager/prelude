@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)https://cp2.retailcloud.net:8443/core/root/index.cfm?pageId=jm&page_layout=vintage -->
+<html lang="en-gb" style="" class=" js no-touch borderradius boxshadow csstransitions localstorage svg inlinesvg svgclippaths"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Manage</title>
+<meta name="description" content="Concrete revolutionises the way international retailers trade their brand on the global stage.">
+<meta name="author" content="Concrete Media Ltd.">
+<!--[if lt IE 9]>
+<script type="text/javascript" >
+document.createElement("nav" );
+document.createElement("header" );
+document.createElement("footer" );
+document.createElement("section" );
+document.createElement("aside" );
+document.createElement("article" );
+</script>
+<![endif]-->
+<script type="text/javascript" async="" src="./Manage_files/analytics.js"></script><script async="" src="./Manage_files/player.28737e028ccdfdf26edfce6c134023b2.js" charset="UTF-8"></script><script async="" src="./Manage_files/gtm.js"></script><script type="text/javascript"> /*Fix for IE */ if(!window.console) { console={}; console.log = function(){};} </script>
+<link rel="shortcut icon" href="https://cp2.retailcloud.net:8443/favicon.ico?noCache=13E53155-87E3-4364-8BD2ACED423DED21" type="image/x-icon">
+<!-- Stylesheets -->
+<link rel="stylesheet" href="./Manage_files/vintage.css" media="screen, projection" type="text/css">
+<link rel="stylesheet" href="./Manage_files/style.cfm" type="text/css">
+<link rel="stylesheet" href="./Manage_files/main.css" type="text/css">
+<link rel="stylesheet" href="./Manage_files/cp2FilterPanel.css" type="text/css">
+<link rel="stylesheet" href="./Manage_files/jquery.multiselect.css" type="text/css">
+<link rel="stylesheet" href="./Manage_files/jquery-ui-1.8.21.custom.css" type="text/css">
+<script type="text/javascript" src="./Manage_files/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="./Manage_files/jquery-ui-1.8.23.custom.min.js"></script>
+<script type="text/javascript" src="./Manage_files/jquery-ui-core.js"></script>
+<script type="text/javascript" src="./Manage_files/jquery-ui-datepicker.js"></script>
+<script type="text/javascript" src="./Manage_files/jquery.serializeobject.min.js"></script>
+<script type="text/javascript" src="./Manage_files/lodash.js"></script>
+<script type="text/javascript" src="./Manage_files/modernizr.js"></script>
+<script type="text/javascript" src="./Manage_files/backbone-min.js"></script>
+<script type="text/javascript" src="./Manage_files/handlebars.js"></script>
+<script type="text/javascript" src="./Manage_files/marionette.js"></script>
+<script type="text/javascript" src="./Manage_files/jquery-ui-widget.js"></script>
+<script type="text/javascript" src="./Manage_files/jquery-ui-multiselect.js"></script>
+<script type="text/javascript" src="./Manage_files/cp2FilterPanel.js"></script>
+<script type="text/javascript" src="./Manage_files/filterise.js"></script>
+<script id="dashboard-table-tpl" type="text/template">
+<thead>
+<tr>
+<th class="noSort" data-colref="colour">
+</th>
+<th class="sortable" data-colref="status_description" data-sortorder="status_description"><span></span>
+Status
+</th>
+<th class="sortable" data-colref="display_number" data-sortorder="display_number"><span></span>
+Job #
+</th>
+<th class="sortable" data-colref="title" data-sortorder="title"><span></span>
+Title
+</th>
+<th class="sortable" data-colref="brief_owner_name" data-sortorder="brief_owner_name"><span></span>
+Owner
+</th>
+<th class="sortable" data-colref="LayoutDate" data-sortorder="LayoutDate"><span></span>
+Layout Date
+</th>
+<th class="sortable" data-colref="CopyDate" data-sortorder="CopyDate"><span></span>
+Copy Date
+</th>
+<th class="sortable" data-colref="FinalRetouchingDate" data-sortorder="FinalRetouchingDate"><span></span>
+Final Retouching Date
+</th>
+<th class="sortable" data-colref="FinalFilesforApproval" data-sortorder="FinalFilesforApproval"><span></span>
+Final Files for Approval
+</th>
+<th class="sortable" data-colref="ProjectDueDate" data-sortorder="ProjectDueDate"><span></span>
+Project Due Date
+</th>
+<th class="noSort" data-colref="assignees">
+Executor(s)
+</th>
+<th class="noSort" data-colref="actionButton">
+<label class="checkbox no-wrap no-text hasIconR" for="selectAll"><span class="icon-checkbox"></span></label>
+<input type="checkbox" id="selectAll" class="checkbox" name="selectAll" />
+</th>
+<th data-colref="actionButton">&nbsp;</th>
+</tr>
+</thead>
+<tbody></tbody>
+</script>
+<script id="dashboard-row-tpl" type="text/template">
+<% var templateData = arguments[0]; %>
+<td class="jobLink" data-colref="colour"><div class="colour" style="background-color: <%- templateData["colour"] %>"></div></td>
+<td class="jobLink" data-colref="status_description"><%-templateData["status_description"]%></td>
+<td class="jobLink" data-colref="display_number"><%-templateData["display_number"]%></td>
+<td class="jobLink" data-colref="title"><%-templateData["title"]%></td>
+<td class="jobLink" data-colref="brief_owner_name"><%-templateData["brief_owner_name"]%></td>
+<td class="jobLink" data-colref="LayoutDate"><%-templateData["LayoutDate"]%></td>
+<td class="jobLink" data-colref="CopyDate"><%-templateData["CopyDate"]%></td>
+<td class="jobLink" data-colref="FinalRetouchingDate"><%-templateData["FinalRetouchingDate"]%></td>
+<td class="jobLink" data-colref="FinalFilesforApproval"><%-templateData["FinalFilesforApproval"]%></td>
+<td class="jobLink" data-colref="ProjectDueDate"><%-templateData["ProjectDueDate"]%></td>
+<td class="jobLink" data-colref="assignees"><%=templateData["assignees"].join("<br />")%></td>
+<td data-colref="actionButton">
+<label class="checkbox no-wrap no-text hasIconR <% selected ? print('active brand-primary brand-primary-bg') : print('') %>" for="checkbox-<%=id%>"><span class="icon-checkbox"></span></label>
+<input type="checkbox" id="checkbox-<%=id%>" class="checkbox" name="selected"<% selected ? print(" checked='checked'") : print("") %> />
+</td>
+<% if (can_delete) { %>
+<td data-colref="actionButton"><a href="#" class="delete buttonLink no-text hasIconR"><span class="icon-remove"></span></a></td>
+<% } else { %>
+<td data-colref="actionButton">&nbsp;</td>
+<% } %>
+</script>
+<script type="text/javascript" src="./Manage_files/ProjectFiles.js"></script>
+<script type="text/javascript" src="./Manage_files/jquery.easing.1.3.js"></script>
+<script src="./Manage_files/main.js"></script>
+<script>
+var CP = CP || {};
+var projectFiles = new ProjectFiles(
+jobID=0,
+projectID=getProjectID()
+);
+projectFiles.clearLocalStorage();
+CP.version = 3
+CP.display = "dashboard";
+CP.mode = "";
+CP.manage = {};
+CP.manage.baseURL = "https://cp2.retailcloud.net:8443/core/root/index.cfm?pageId=jm&page_layout=vintage&source=";
+CP.manage.jobID = 0;
+// TODO move JS below to separate file
+$.ajaxSetup({
+cache: false
+});
+$(function() {
+//Clear functionality
+$(".buttonFieldset").click(function(e){
+// Set the filter to blank
+$("#searchTermInput").val("");
+$("#searchTermInput").trigger( "change" );
+// set the visua filter to blank
+$("#filterSearchTerm").val("");
+});
+//Search functionality
+$(".search-term-input").on("keydown focusout", function(e){
+var value = e.currentTarget.value;
+// get the filter hidden element in the form
+var $el = $("#searchTermInput");
+if(e.type == "keydown" && e.keyCode == 13) {
+$(this).trigger( "focusout" );
+} else {
+if(e.type == "focusout") {
+if($el) {
+$el.val(value);
+$el.trigger( "change" );
+}
+}
+}
+});
+//Limit functionality
+$(".max-rows").change(function(e){
+var value = $(".max-rows").val();
+// get the filter hidden element in the form
+var $el = $("#limit")
+if($el) {
+$el.val(value);
+$el.trigger( "change" );
+}
+});
+var manageFilter = new CP.filter.Filterise();
+getFilterDataFromSession().done(function(filterData) {
+manageFilter.init("#search", "manage", 0, filterData, {});
+});
+// To save needing references to various containers, reference the body and bind events to it
+var body = $("body");
+// JM-wide buttons
+$("#newJob").click(function(e){
+e.preventDefault();
+window.location = CP.manage.baseURL + "&dsp=form&mode=add";
+});
+$("#editJob").click(function(e){
+e.preventDefault();
+window.location = CP.manage.baseURL + "&dsp=form&mode=edit&jobID=" + CP.manage.jobID;
+});
+$("#export").click(function(e){
+// Trigger the Excel download, respecting the filter data from filter model
+e.preventDefault();
+/// get the search filter
+var filter = JM.m.filter.toJSON();
+// Create the URL
+var exportURL = "/core/root/ajax.cfc?method=goXLS&logicalComponent=jobManagement.JobManagement&logicalMethod=search&asQuery=false&paging=true&returnFormat=json" ;
+//Create the filter params
+var params = [
+"cols=" + "status_description,brief_owner_name,survey_name,display_number,campaign ,element ,create_date ,1stVisuals,Deadline mail out,assignees,Reason",
+"jobTypeID=" + filter.jobTypeID,
+"limit=" + "10000",
+"skip=" + filter.skip,
+"statusID=" + filter.statusID,
+"sortDir=" + filter.sortDir,
+"clientID=" + filter.clientID,
+"showComplete=" + filter.showCompleted,
+"calDeadlineType=" + filter.calDeadlineType,
+"searchTerm=" + filter.searchTerm,
+"showDelete=" + filter.showDeleted,
+"departmentID=" + filter.departmentID,
+"sortBy=" + filter.sortBy,
+"page=" + filter.page,
+"recordCount=" + filter.recordCount
+];
+// Passover statusID as getAllstatus = true if all checkboxes are selected
+var statusID = $("select[name='statusID']").val() || "";
+var statusIdLen = statusID.length;
+var statusOptionslen = $("select[name='statusID']").children('option').length;
+if(statusIdLen == statusOptionslen || statusIdLen == 0) {
+params.getAllStatus=true;
+} else {
+if(statusID.length && statusID != "ALL") {
+params.statusID=statusID;
+}
+}
+// Passover assigneeID as getAllassignee = true if all checkboxes are selected
+var assigneeID = $("select[name='assigneeID']").val() || "";
+var assigneeIdLen = assigneeID.length;
+var assigneeOptionslen = $("select[name='assigneeID']").children('option').length;
+if(assigneeIdLen == assigneeOptionslen || assigneeIdLen == 0) {
+params.getAllAssignee=true;
+} else {
+if(assigneeID.length && assigneeID != "ALL") {
+params.assigneeID=assigneeID;
+}
+}
+// Passover teamID as getAllteam = true if all checkboxes are selected
+var teamID = $("select[name='teamID']").val() || "";
+var teamIdLen = teamID.length;
+var teamOptionslen = $("select[name='teamID']").children('option').length;
+if(teamIdLen == teamOptionslen || teamIdLen == 0) {
+params.getAllTeam=true;
+} else {
+if(teamID.length && teamID != "ALL") {
+params.teamID=teamID;
+}
+}
+exportURL += "&" +params.join("&");
+window.location = exportURL
+});
+// Thumb buttons
+// Remove a file from this job
+body.on("click", "button.removeFile", function(e) {
+e.preventDefault();
+if (confirm("Are you sure you'd like to remove this file?")) {
+var value = e.currentTarget.value;
+var fileID = value.split("_")[0];
+var fileJobID = value.split("_")[1];
+var btn = e.currentTarget;
+var req = $.ajax({
+url: "/core/root/ajax.cfc?method=goJSON&logicalComponent=jobManagement.JobManagement&logicalMethod=removeFile&returnFormat=json",
+data: {
+fileID: fileID,
+fileJobID: fileJobID
+}
+});
+req.done(function(res) {
+if (res) {
+var thumbsContainer = $(btn).closest("div.thumbs");
+// Remove the thumbnail HTML
+$(btn).closest("div.thumb").remove();
+// Check the thumbnail group div and remove if empty
+if ($("div.thumbs", thumbsContainer).length === 0) {
+thumbsContainer.remove();
+}
+projectFiles.syncFilesToLocalStorage();
+} else {
+alert("You're not allowed to remove file (" + fileID + ") from job (" + fileJobID + ")");
+}
+});
+req.fail(function() {
+alert("There was a problem removing file (" + fileID + ") from job (" + fileJobID + ")");
+});
+}
+});
+//Checkbox label logic
+$("input.checkbox").on("click",function(){
+$(this).prev(".checkbox").toggleClass("active brand-primary brand-primary-bg");
+});
+var fullscreenInput = $("#fullscreenToggle");
+if (CP.version && CP.version === 2 && !isInFrame()){
+fullscreenInput.prev(".checkbox").remove();
+fullscreenInput.remove();
+} else {
+fullscreenInput.click(function(e) {
+fullscreenToggle(e);
+});
+}
+JM.addInitializer(function () {
+JM.v.dashboardTable.autoRefresh = $("#toggleRefresh").is(":checked") ;
+JM.v.dashboardTable.pollRefresh();
+refreshCheckbox($("#toggleRefresh"));
+});
+$(".multiStatus").multiselect({
+classes: "styled-multi",
+noneSelectedText: "All statuses",
+selectedText: function(numChecked, numTotal, checkedItems) {
+var statusNoun = (numChecked === 1) ? "status" : "statuses" ;
+return numChecked + " " + statusNoun;
+}
+});
+$(".multiAssignee").multiselect({
+classes: "styled-multi",
+noneSelectedText: "All assignees",
+selectedText: function(numChecked, numTotal, checkedItems) {
+var statusNoun = (numChecked === 1) ? "assignee" : "assignees" ;
+return numChecked + " " + statusNoun;
+}
+});
+$(".multiTeam").multiselect({
+classes: "styled-multi",
+noneSelectedText: "All teams",
+selectedText: function(numChecked, numTotal, checkedItems) {
+var statusNoun = (numChecked === 1) ? "team" : "teams" ;
+return numChecked + " " + statusNoun;
+}
+});
+$( document ).on( "filterChange", function(){
+JM.c.jobs.refresh();
+} );
+// Start the application - Dashboard only
+JM.start();
+$("body").removeClass("loading");
+});
+function getFilterDataFromSession() {
+return $.ajax({
+url: "/core/root/ajax.cfc?method=goJSON&logicalComponent=filter.filter&logicalMethod=getFilterSessionData&returnFormat=json",
+data: {
+application_name: "manage"
+}
+});
+}
+function refreshCheckbox(cb) {
+// Checkboxes are hidden and made to look nicer, we need a single place to update the CSS for the new DOM elements so we can call it when needed
+if (cb.prop("checked")) {
+cb.prev(".checkbox").addClass("active brand-primary brand-primary-bg");
+} else {
+cb.prev(".checkbox").removeClass("active brand-primary brand-primary-bg");
+}
+}
+function loadUploader(container, jobID, type, fileID) {
+// Load the uploader into the given container
+var req = $.ajax({
+url: "/core/root/ajax.cfc?method=goPlain&logicalComponent=jobManagement.JobManagement&logicalMethod=uploader",
+data: {
+jobID: jobID,
+type: type,
+fileID: fileID
+}
+});
+req.done(function(res) {
+container.append(res);
+scrollToElement(container);
+});
+}
+function scrollToElement(e) {
+// Scroll to the given element (jQuery or DOM)
+if (e instanceof jQuery && e.length) {
+e = e.get(0);
+}
+e.scrollIntoView(true);
+}
+function getProjectID() {
+return $("#gotoApprovalProject").val();
+}
+function refreshThumbnails(type, callback, fileJobID) {
+// Refresh the thumbnails
+var req = $.ajax({
+url: "/core/root/ajax.cfc?method=goPlain&logicalComponent=jobManagement.JobManagement&logicalMethod=filesHTML",
+data: {
+jobID: 0,
+type: type,
+editable: true,
+projectID: getProjectID(),
+fileJobID: fileJobID
+}
+});
+req.done(function(res) {
+// We may not have a container to place the returned HTML so it goes into one of two places
+var container = $("div." + type + " .thumb-section");
+var thumbs = res;
+// If We have a container pull the thumbs out of the response container
+if (container.length) {
+thumbs = $(res).html();
+container.html(thumbs);
+} else {
+container = $("div." + type)
+container.append(thumbs);
+}
+if (callback) {
+callback();
+}
+// Scroll to the thumbnail
+scrollToElement(container);
+projectFiles.syncFilesToLocalStorage();
+});
+}
+function fullscreenToggle(e) {
+var input = $(e.target);
+var version = CP.version;
+if (version && version === 3) {
+if (input.is(":checked")) {
+if (transitionEnd) {
+$("header").addClass("maximised").one(transitionEnd, function() {
+$("#wrapper").addClass("maximised");
+});
+} else {
+$("header,#wrapper").addClass("maximised");
+}
+} else {
+if (transitionEnd) {
+$("#wrapper").removeClass("maximised").one(transitionEnd, function() {
+$("header").removeClass("maximised");
+});
+} else {
+$("header,#wrapper").removeClass("maximised");
+}
+}
+} else if (version && version === 2 && isInFrame()) {
+var newWindow = window.open(window.location.href,'_blank');
+input.attr("checked",false).prev(".checkbox").toggleClass("active brand-primary brand-primary-bg");
+}
+}
+</script>
+<link rel="stylesheet" type="text/css" href="./Manage_files/appcues.min.css">
+</head>
+<body id="jm" class="application vcg-hack" cz-shortcut-listen="true">
+<header>
+<div class="headerTop">
+<div class="logo">
+<img src="./Manage_files/CamutoGroupLogo.png" alt="Logo" title="Camuto Group © 2015">
+</div>
+<div id="notification" class="notification">
+</div>
+<nav>
+<ul>
+<li><a class="" href="https://cp2.retailcloud.net:8443/core/root/index.cfm?pageId=publish&amp;tab=homepage#1" title="Home">Home</a>
+</li><li><a class="" href="https://cp2.retailcloud.net:8443/core/root/index.cfm?pageId=vault&amp;tab=myFolders#myFolders" title="My Folders">My Folders</a></li>
+<li><a class="" href="https://cp2.retailcloud.net:8443/core/root/index.cfm?pageId=iFrame&amp;page_layout=vintage&amp;tab=subscriptions&amp;pageUrl=folderSubscription" title="Subscriptions">Subscriptions</a></li>
+<li><a class="" href="https://cp2.retailcloud.net:8443/core/root/index.cfm?pageId=iFrame&amp;page_layout=vintage&amp;tab=admin&amp;pageUrl=adminHome&amp;fileZoneId=99" title="Administration">Administration</a></li>
+<li><a href="https://cp2.retailcloud.net:8443/authentication_logout.cfm">Logout</a></li>
+</ul>
+</nav>
+<div style="position: absolute; top: 12px; right: 12px;">
+<a href="https://cp2.retailcloud.net:8443/frameset.cfm?goto_page=admin">
+<img src="./Manage_files/CP2Link.png" title="CP2 Administration" border="0">
+</a>
+</div>
+</div>
+<div class="bar">
+</div>
+</header>
+<div id="wrapper" class="panelActive">
+<div id="contentPage" class="container ">
+<div id="filterPanel">
+<div class="handle"></div>
+<div class="filterContentWrapper">
+<input type="text" id="filterSearchTerm" name="searchTerm" value="" class="search-term-input" style="left: 0px">
+<button class="search-btn">Search</button>
+<form id="search">
+<fieldset>
+<legend>Status</legend>
+<select name="statusID" multiple="multiple" class="multiStatus resettable-active" size="10" style="display: none;">
+<option value="26" style="color:#FF9400">Brief in Creation (2)</option>
+<option value="21" style="color:#0064B5">Brief Assigned (9)</option>
+<option value="51" style="color:#FFA500">Briefer Approval (1)</option>
+<option value="22" style="color:#660033">Design Approved (5)</option>
+<option value="24" style="color:#CC9900">Copy Delivered (3)</option>
+<option value="30" style="color:#FF0000">Question (3)</option>
+<option value="31" style="color:#FF0000">Edit (2)</option>
+<option value="18" style="color:#996633">Response (7)</option>
+<option value="28" style="color:#66FFCC">Updated (4)</option>
+<option value="35" style="color:#990033">Released (1176)</option>
+<option value="43" style="color:#CCCC00">Canceled (98)</option>
+</select><button type="button" class="ui-multiselect ui-widget ui-state-default ui-corner-all styled-multi" aria-haspopup="true" style="width: 143px;"><span>2 statuses</span></button><button type="button" class="reset-button brand-primary-bg brand-primary">Clear</button>
+</fieldset>
+<fieldset>
+<legend>Refine</legend>
+<div class="styled-select">
+<select class="manage-select" name="jobTypeID">
+<option value="ALL">All job types</option>
+<option value="30">Blast</option>
+<option value="15">Blogs</option>
+<option value="23">HP, Blast, Blast Module, HP Module or LP</option>
+<option value="33">Module</option>
+<option value="26">Retail Sale Assets</option>
+<option value="37">Store Event</option>
+<option value="24">Trend Packets</option>
+<option value="40">Video</option>
+</select>
+</div>
+</fieldset>
+<fieldset>
+<legend>Associated with</legend>
+<select name="teamID" multiple="multiple" class="multiTeam" size="10" style="display: none;">
+<option value="1">Concrete Team</option>
+<option value="3">Vince Camuto Edit All Team</option>
+</select><button type="button" class="ui-multiselect ui-widget ui-state-default ui-corner-all styled-multi" aria-haspopup="true"><span>All teams</span></button>
+<div class="styled-select">
+<select class="manage-select" name="departmentID">
+<option value="ALL" selected="selected">All departments</option>
+<option value="1">Ecomm/Photo Studio</option>
+<option value="3">Marketing</option>
+<option value="4">Creative</option>
+<option value="8">PR</option>
+<option value="9">Sales</option>
+<option value="10">Copy</option>
+</select>
+</div>
+<div class="styled-select">
+<select class="manage-select" name="clientID">
+<option value="ALL">All users</option>
+<option value="2176">Caroline Carey</option>
+<option value="2276">Christina Shanahan</option>
+<option value="48">Deleted Deleted</option>
+<option value="2215">Deleted Deleted</option>
+<option value="2177">Diana Takach</option>
+<option value="2189">Erika Fox</option>
+<option value="2179">Eve Loughran</option>
+<option value="2162">Gordon Jackson</option>
+<option value="2173">Janice Chou</option>
+<option value="2172">Jennifer Williams</option>
+<option value="2192">Kacie Cellino</option>
+<option value="2242">Katharine Still</option>
+<option value="2245">Katy Lyons</option>
+<option value="2279">Kellie Kotalik</option>
+<option value="2243">Kristin Leh</option>
+<option value="2250">Lexi Miller</option>
+<option value="2220">Lorraine Thompson</option>
+<option value="2277">Melissa Decker</option>
+<option value="2255">Niamh O'Sullivan</option>
+<option value="2261">Paige Vila</option>
+<option value="2216">Rishelle Notghi</option>
+<option value="2268">Sarahrose Getz</option>
+<option value="2167">Suzanne Servelli</option>
+<option value="2259">Taylor Callaghan</option>
+<option value="2166">Teresa Menichino</option>
+</select>
+</div>
+</fieldset>
+<fieldset>
+<legend>Assigned to</legend>
+<select name="assigneeID" multiple="multiple" class="multiAssignee resettable-active" size="10" style="display: none;">
+<option value="2289">Ally Romano</option>
+<option value="2271">Amelia Stein</option>
+<option value="2253">Amy Etinger</option>
+<option value="2239">Andrew Madrid</option>
+<option value="2274">Angelique Ambrosio</option>
+<option value="2282">Brooke Danielson</option>
+<option value="2176">Caroline Carey</option>
+<option value="2276">Christina Shanahan</option>
+<option value="2287">Danielle Frappier</option>
+<option value="2177">Diana Takach</option>
+<option value="2286">Eleanor Franko</option>
+<option value="2174">Elise Wang</option>
+<option value="2189">Erika Fox</option>
+<option value="2226">Erin Lynch</option>
+<option value="2229">Erin Williams</option>
+<option value="2225">Eunsun Gi</option>
+<option value="2179">Eve Loughran</option>
+<option value="2231">Gabriela Ponce</option>
+<option value="2262">Hal Miller</option>
+<option value="2228">Hannah Salkovitz</option>
+<option value="2173">Janice Chou</option>
+<option value="2172">Jennifer Williams</option>
+<option value="2221">Jessica Murphy</option>
+<option value="2258">Jin Lee</option>
+<option value="2224">Julie Trafford</option>
+<option value="2192">Kacie Cellino</option>
+<option value="2242">Katharine Still</option>
+<option value="2257">Kathryn Hurni</option>
+<option value="2234">Katie Ammons</option>
+<option value="2227">Katlin Burks</option>
+<option value="2245">Katy Lyons</option>
+<option value="2243">Kristin Leh</option>
+<option value="2281">Leah Furman</option>
+<option value="2184">Leah Robert</option>
+<option value="2230">Liz Ahluwalia</option>
+<option value="2220">Lorraine Thompson</option>
+<option value="2175">Mei Choong</option>
+<option value="2277">Melissa Decker</option>
+<option value="2255">Niamh O'Sullivan</option>
+<option value="2232">Oliver Vignola</option>
+<option value="2261">Paige Vila</option>
+<option value="2216">Rishelle Notghi</option>
+<option value="2178">Russell Poltrack</option>
+<option value="2207">Sarah Rosen</option>
+<option value="2268">Sarahrose Getz</option>
+<option value="2278">Savanna Quevedo</option>
+<option value="2167">Suzanne Servelli</option>
+<option value="2166">Teresa Menichino</option>
+<option value="2168">Treena Lombardo</option>
+<option value="2213">Yuthi Meas</option>
+</select><button type="button" class="ui-multiselect ui-widget ui-state-default ui-corner-all styled-multi" aria-haspopup="true" style="width: 143px;"><span>2 assignees</span></button><button type="button" class="reset-button brand-primary-bg brand-primary">Clear</button>
+</fieldset>
+<fieldset class="buttonFieldset">
+<input type="button" value="Clear">
+</fieldset>
+<input type="hidden" id="limit" name="limit" value="20">
+<input type="text" id="searchTermInput" name="searchTermInput" value="" style="display:none">
+</form>
+</div>
+</div>
+<div class="mainContentContainer withPanel">
+<div class="loading-spinner" id="manageDashboardLoader" style="z-index: 500; width: 100%; height: 100%;"></div>
+<div id="content-breadcrumb"><a href="https://cp2.retailcloud.net:8443/core/root/index.cfm?pageId=homePage">Home</a>&nbsp;<span class="divider">|</span>&nbsp;Manage : Dashboard</div>
+<div id="pageOptions">
+<label class="checkbox no-text hasIconR" for="fullscreenToggle"><span class="icon-resize-full"></span></label>
+<input type="checkbox" class="checkbox" name="fullscreenToggle" id="fullscreenToggle">
+<label class="checkbox hasIconR active brand-primary brand-primary-bg" for="toggleRefresh">Auto-Refresh<span class="icon-refresh"></span></label>
+<input type="checkbox" class="checkbox" name="toggleRefresh" id="toggleRefresh" checked="true">
+</div>
+<div id="mainContent" class="brand-primary-bg">
+<h1 class="main-title brand-primary brand-primary-text">
+Manage : Dashboard
+</h1>
+<div class="jm-actions">
+<button id="export" class="hasIconL"><span class="icon-export"></span>Export</button>
+<button id="newJob" class="hasIconL"><span class="icon-plus"></span>New Job</button>
+<a href="https://cp2.retailcloud.net:8443/core/root/index.cfm?pageId=jmCalendar&amp;page_layout=vintage"><button id="jmCalendar">Deadline Calendar</button></a>
+</div>
+<div id="dashboardContainer">
+<form id="bulkUpdate" class="invisible">
+<fieldset>
+<legend>Bulk Update</legend>
+<input type="button" id="bulkDeleteButton" class="bulkDeleteButton" value="Delete Selected">
+<div class="styled-select">
+<select name="statusID">
+<option value="0">Choose a Status</option>
+<option value="26" style="color:#FF9400">Brief in Creation</option>
+<option value="20" style="color:#0FAD00">Brief Submitted</option>
+<option value="21" style="color:#0064B5">Brief Assigned</option>
+<option value="51" style="color:#FFA500">Briefer Approval</option>
+<option value="19" style="color:#6300A5">Photo Studio/Retouching</option>
+<option value="16" style="color:#FF33CC">With Design/Copy</option>
+<option value="22" style="color:#660033">Design Approved</option>
+<option value="14" style="color:#333300">Layout Delivered</option>
+<option value="24" style="color:#CC9900">Copy Delivered</option>
+<option value="44" style="color:#CC3300">Copy Placed in Layout</option>
+<option value="40" style="color:#FF6666">Copy Approved</option>
+<option value="48" style="color:#FF99FF">Product Approval</option>
+<option value="49" style="color:#FF99FF">Ecomm/Retail Approval</option>
+<option value="4" style="color:#FF99FF">Final Approval - Briefer</option>
+<option value="47" style="color:#FF99FF">Final Approval - Rishelle</option>
+<option value="41" style="color:#FF99FF">Final Approval - Suz</option>
+<option value="50" style="color:#FF99FF">Final Approval - Sarah</option>
+<option value="12" style="color:#FF99FF">Final Approval - Yuthi</option>
+<option value="11" style="color:#FF99FF">Final Approval - Lorraine</option>
+<option value="5" style="color:#FF99FF">Final Approval - Treena</option>
+<option value="30" style="color:#FF0000">Question</option>
+<option value="31" style="color:#FF0000">Edit</option>
+<option value="18" style="color:#996633">Response</option>
+<option value="27" style="color:#FFCC00">On Hold</option>
+<option value="28" style="color:#66FFCC">Updated</option>
+<option value="35" style="color:#990033">Released</option>
+<option value="43" style="color:#CCCC00">Canceled</option>
+</select>
+</div>
+<input type="submit" value="Update">
+</fieldset>
+</form>
+<form id="bulkUpdate" class="invisible">
+<fieldset>
+<legend>Bulk Update</legend>
+<input type="button" id="bulkDeleteButton" class="bulkDeleteButton" value="Delete Selected">
+<div class="styled-select">
+<select name="statusID">
+<option value="0">Choose a Status</option>
+<option value="26" style="color:#FF9400">Brief in Creation</option>
+<option value="20" style="color:#0FAD00">Brief Submitted</option>
+<option value="21" style="color:#0064B5">Brief Assigned</option>
+<option value="51" style="color:#FFA500">Briefer Approval</option>
+<option value="19" style="color:#6300A5">Photo Studio/Retouching</option>
+<option value="16" style="color:#FF33CC">With Design/Copy</option>
+<option value="22" style="color:#660033">Design Approved</option>
+<option value="14" style="color:#333300">Layout Delivered</option>
+<option value="24" style="color:#CC9900">Copy Delivered</option>
+<option value="44" style="color:#CC3300">Copy Placed in Layout</option>
+<option value="40" style="color:#FF6666">Copy Approved</option>
+<option value="48" style="color:#FF99FF">Product Approval</option>
+<option value="49" style="color:#FF99FF">Ecomm/Retail Approval</option>
+<option value="4" style="color:#FF99FF">Final Approval - Briefer</option>
+<option value="47" style="color:#FF99FF">Final Approval - Rishelle</option>
+<option value="41" style="color:#FF99FF">Final Approval - Suz</option>
+<option value="50" style="color:#FF99FF">Final Approval - Sarah</option>
+<option value="12" style="color:#FF99FF">Final Approval - Yuthi</option>
+<option value="11" style="color:#FF99FF">Final Approval - Lorraine</option>
+<option value="5" style="color:#FF99FF">Final Approval - Treena</option>
+<option value="30" style="color:#FF0000">Question</option>
+<option value="31" style="color:#FF0000">Edit</option>
+<option value="18" style="color:#996633">Response</option>
+<option value="27" style="color:#FFCC00">On Hold</option>
+<option value="28" style="color:#66FFCC">Updated</option>
+<option value="35" style="color:#990033">Released</option>
+<option value="43" style="color:#CCCC00">Canceled</option>
+</select>
+</div>
+<input type="submit" value="Update">
+</fieldset>
+</form>
+<form id="bulkUpdate" class="invisible">
+<fieldset>
+<legend>Bulk Update</legend>
+<input type="button" id="bulkDeleteButton" class="bulkDeleteButton" value="Delete Selected">
+<div class="styled-select">
+<select name="statusID">
+<option value="0">Choose a Status</option>
+<option value="26" style="color:#FF9400">Brief in Creation</option>
+<option value="20" style="color:#0FAD00">Brief Submitted</option>
+<option value="21" style="color:#0064B5">Brief Assigned</option>
+<option value="51" style="color:#FFA500">Briefer Approval</option>
+<option value="19" style="color:#6300A5">Photo Studio/Retouching</option>
+<option value="16" style="color:#FF33CC">With Design/Copy</option>
+<option value="22" style="color:#660033">Design Approved</option>
+<option value="14" style="color:#333300">Layout Delivered</option>
+<option value="24" style="color:#CC9900">Copy Delivered</option>
+<option value="44" style="color:#CC3300">Copy Placed in Layout</option>
+<option value="40" style="color:#FF6666">Copy Approved</option>
+<option value="48" style="color:#FF99FF">Product Approval</option>
+<option value="49" style="color:#FF99FF">Ecomm/Retail Approval</option>
+<option value="4" style="color:#FF99FF">Final Approval - Briefer</option>
+<option value="47" style="color:#FF99FF">Final Approval - Rishelle</option>
+<option value="41" style="color:#FF99FF">Final Approval - Suz</option>
+<option value="50" style="color:#FF99FF">Final Approval - Sarah</option>
+<option value="12" style="color:#FF99FF">Final Approval - Yuthi</option>
+<option value="11" style="color:#FF99FF">Final Approval - Lorraine</option>
+<option value="5" style="color:#FF99FF">Final Approval - Treena</option>
+<option value="30" style="color:#FF0000">Question</option>
+<option value="31" style="color:#FF0000">Edit</option>
+<option value="18" style="color:#996633">Response</option>
+<option value="27" style="color:#FFCC00">On Hold</option>
+<option value="28" style="color:#66FFCC">Updated</option>
+<option value="35" style="color:#990033">Released</option>
+<option value="43" style="color:#CCCC00">Canceled</option>
+</select>
+</div>
+<input type="submit" value="Update">
+</fieldset>
+</form>
+<form id="bulkUpdate" class="invisible">
+<fieldset>
+<legend>Bulk Update</legend>
+<input type="button" id="bulkDeleteButton" class="bulkDeleteButton" value="Delete Selected">
+<div class="styled-select">
+<select name="statusID">
+<option value="0">Choose a Status</option>
+<option value="26" style="color:#FF9400">Brief in Creation</option>
+<option value="20" style="color:#0FAD00">Brief Submitted</option>
+<option value="21" style="color:#0064B5">Brief Assigned</option>
+<option value="51" style="color:#FFA500">Briefer Approval</option>
+<option value="19" style="color:#6300A5">Photo Studio/Retouching</option>
+<option value="16" style="color:#FF33CC">With Design/Copy</option>
+<option value="22" style="color:#660033">Design Approved</option>
+<option value="14" style="color:#333300">Layout Delivered</option>
+<option value="24" style="color:#CC9900">Copy Delivered</option>
+<option value="44" style="color:#CC3300">Copy Placed in Layout</option>
+<option value="40" style="color:#FF6666">Copy Approved</option>
+<option value="48" style="color:#FF99FF">Product Approval</option>
+<option value="49" style="color:#FF99FF">Ecomm/Retail Approval</option>
+<option value="4" style="color:#FF99FF">Final Approval - Briefer</option>
+<option value="47" style="color:#FF99FF">Final Approval - Rishelle</option>
+<option value="41" style="color:#FF99FF">Final Approval - Suz</option>
+<option value="50" style="color:#FF99FF">Final Approval - Sarah</option>
+<option value="12" style="color:#FF99FF">Final Approval - Yuthi</option>
+<option value="11" style="color:#FF99FF">Final Approval - Lorraine</option>
+<option value="5" style="color:#FF99FF">Final Approval - Treena</option>
+<option value="30" style="color:#FF0000">Question</option>
+<option value="31" style="color:#FF0000">Edit</option>
+<option value="18" style="color:#996633">Response</option>
+<option value="27" style="color:#FFCC00">On Hold</option>
+<option value="28" style="color:#66FFCC">Updated</option>
+<option value="35" style="color:#990033">Released</option>
+<option value="43" style="color:#CCCC00">Canceled</option>
+</select>
+</div>
+<input type="submit" value="Update">
+</fieldset>
+</form>
+<div id="pagingTop" class="paging">
+<div id="pagingTopLeft" class="paging-top-left"><p></p></div>
+<div id="pagingTopRight" class="paging-top-right">
+Number of Rows:
+<select class="max-rows">
+<option value="20" selected="selected">20</option>
+<option value="50">50</option>
+<option value="100">100</option>
+</select>
+</div>
+</div>
+<div id="dashboard"><table>
+<thead>
+<tr>
+<th class="noSort" data-colref="colour">
+</th>
+<th class="sortable" data-colref="status_description" data-sortorder="status_description"><span></span>
+Status
+</th>
+<th class="sortable" data-colref="display_number" data-sortorder="display_number"><span></span>
+Job #
+</th>
+<th class="sortable" data-colref="title" data-sortorder="title"><span></span>
+Title
+</th>
+<th class="sortable" data-colref="brief_owner_name" data-sortorder="brief_owner_name"><span></span>
+Owner
+</th>
+<th class="sortable" data-colref="LayoutDate" data-sortorder="LayoutDate"><span></span>
+Layout Date
+</th>
+<th class="sortable" data-colref="CopyDate" data-sortorder="CopyDate"><span></span>
+Copy Date
+</th>
+<th class="sortable" data-colref="FinalRetouchingDate" data-sortorder="FinalRetouchingDate"><span></span>
+Final Retouching Date
+</th>
+<th class="sortable" data-colref="FinalFilesforApproval" data-sortorder="FinalFilesforApproval"><span></span>
+Final Files for Approval
+</th>
+<th class="sortable" data-colref="ProjectDueDate" data-sortorder="ProjectDueDate"><span></span>
+Project Due Date
+</th>
+<th class="noSort" data-colref="assignees">
+Executor(s)
+</th>
+<th class="noSort" data-colref="actionButton">
+<label class="checkbox no-wrap no-text hasIconR" for="selectAll"><span class="icon-checkbox"></span></label>
+<input type="checkbox" id="selectAll" class="checkbox" name="selectAll">
+</th>
+<th data-colref="actionButton">&nbsp;</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<br>
+</div>
+</div>
+<script>
+// retrieve the breadcrumb from the div
+var breadcrumb = document.getElementById('content-breadcrumb');
+// if the breadcrumb exists, extract the text from it and remove carriage returns
+var breadcrumbContent = (breadcrumb === null ? '' : breadcrumb.textContent.replace(/[\n\r]/g, ''));
+// if dataLayer has already been defined then use it otherwise initialise it as a new array
+window.dataLayer = window.dataLayer || [];
+// use push to add dataLayer variables so that our values are the most recently defined and picked up by GTM
+dataLayer.push({
+'customer': 'VCG',
+'userID': '2290',
+'customerUserID': 'VCG2290',
+'userOrgName': "Concrete Media Ltd",
+'userGroupName': 'Super User',
+'applicationName': 'Manage',
+'breadcrumb': breadcrumbContent
+});
+</script>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TQJS3M"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TQJS3M');</script>
+<footer>
+<div class="footerContents">
+<div class="footerTAndCs">
+<a href="javascript: tAndCsPopUp(&#39;/termsAndConditions.cfm&#39;)">
+<p>View site <strong>Terms &amp; Conditions</strong></p>
+</a>
+</div>
+<div class="footerDivider"> | </div>
+<div class="footerConcrete">
+<a href="http://www.concreteplatform.com/">
+<img src="./Manage_files/concrete_strapline.png" height="14">
+</a>
+</div>
+</div>
+</footer>
+<script type="text/javascript">
+var tandc;
+function tAndCsPopUp(urlString) {
+if(tandc) {
+if(!tandc.closed) tandc.close();
+}
+tandc = open(urlString, 'tandc', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,copyhistory=yes,width=600,height=520');
+}
+</script>
+<script>
+window.inlineManualTracking = {
+uid: "VCG2290",
+username: "Concrete Media Ltd",
+group: "Super User",
+created: 1512131152
+};
+!function(){var e=document.createElement("script"),t=document.getElementsByTagName("script")[0];
+e.async=1,e.src="https://inlinemanual.com/embed/player.28737e028ccdfdf26edfce6c134023b2.js",
+e.charset="UTF-8",t.parentNode.insertBefore(e,t)}();
+</script>
+
+
+<div class="ui-multiselect-menu ui-widget ui-widget-content ui-corner-all styled-multi"><div class="ui-widget-header ui-corner-all ui-multiselect-header ui-helper-clearfix"><ul class="ui-helper-reset"><li><a class="ui-multiselect-all" href="https://cp2.retailcloud.net:8443/core/root/index.cfm?pageId=jm&amp;page_layout=vintage#"><span class="ui-icon ui-icon-check"></span><span>Check all</span></a></li><li><a class="ui-multiselect-none" href="https://cp2.retailcloud.net:8443/core/root/index.cfm?pageId=jm&amp;page_layout=vintage#"><span class="ui-icon ui-icon-closethick"></span><span>Uncheck all</span></a></li><li class="ui-multiselect-close"><a href="https://cp2.retailcloud.net:8443/core/root/index.cfm?pageId=jm&amp;page_layout=vintage#" class="ui-multiselect-close"><span class="ui-icon ui-icon-circle-close"></span></a></li></ul></div><ul class="ui-multiselect-checkboxes ui-helper-reset"><li class=" "><label for="ui-multiselect-3-option-0" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-0" name="multiselect_3" type="checkbox" value="26" title="Brief in Creation (2)" checked="checked" aria-selected="true"><span>Brief in Creation (2)</span></label></li><li class=" "><label for="ui-multiselect-3-option-1" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-1" name="multiselect_3" type="checkbox" value="21" title="Brief Assigned (9)" checked="checked" aria-selected="true"><span>Brief Assigned (9)</span></label></li><li class=" "><label for="ui-multiselect-3-option-2" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-2" name="multiselect_3" type="checkbox" value="51" title="Briefer Approval (1)"><span>Briefer Approval (1)</span></label></li><li class=" "><label for="ui-multiselect-3-option-3" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-3" name="multiselect_3" type="checkbox" value="22" title="Design Approved (5)"><span>Design Approved (5)</span></label></li><li class=" "><label for="ui-multiselect-3-option-4" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-4" name="multiselect_3" type="checkbox" value="24" title="Copy Delivered (3)"><span>Copy Delivered (3)</span></label></li><li class=" "><label for="ui-multiselect-3-option-5" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-5" name="multiselect_3" type="checkbox" value="30" title="Question (3)"><span>Question (3)</span></label></li><li class=" "><label for="ui-multiselect-3-option-6" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-6" name="multiselect_3" type="checkbox" value="31" title="Edit (2)"><span>Edit (2)</span></label></li><li class=" "><label for="ui-multiselect-3-option-7" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-7" name="multiselect_3" type="checkbox" value="18" title="Response (7)"><span>Response (7)</span></label></li><li class=" "><label for="ui-multiselect-3-option-8" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-8" name="multiselect_3" type="checkbox" value="28" title="Updated (4)"><span>Updated (4)</span></label></li><li class=" "><label for="ui-multiselect-3-option-9" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-9" name="multiselect_3" type="checkbox" value="35" title="Released (1176)"><span>Released (1176)</span></label></li><li class=" "><label for="ui-multiselect-3-option-10" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-10" name="multiselect_3" type="checkbox" value="43" title="Canceled (98)"><span>Canceled (98)</span></label></li></ul></div><div class="ui-multiselect-menu ui-widget ui-widget-content ui-corner-all styled-multi"><div class="ui-widget-header ui-corner-all ui-multiselect-header ui-helper-clearfix"><ul class="ui-helper-reset"><li><a class="ui-multiselect-all" href="https://cp2.retailcloud.net:8443/core/root/index.cfm?pageId=jm&amp;page_layout=vintage#"><span class="ui-icon ui-icon-check"></span><span>Check all</span></a></li><li><a class="ui-multiselect-none" href="https://cp2.retailcloud.net:8443/core/root/index.cfm?pageId=jm&amp;page_layout=vintage#"><span class="ui-icon ui-icon-closethick"></span><span>Uncheck all</span></a></li><li class="ui-multiselect-close"><a href="https://cp2.retailcloud.net:8443/core/root/index.cfm?pageId=jm&amp;page_layout=vintage#" class="ui-multiselect-close"><span class="ui-icon ui-icon-circle-close"></span></a></li></ul></div><ul class="ui-multiselect-checkboxes ui-helper-reset"><li class=" "><label for="ui-multiselect-3-option-0" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-0" name="multiselect_3" type="checkbox" value="2289" title="Ally Romano" checked="checked" aria-selected="true"><span>Ally Romano</span></label></li><li class=" "><label for="ui-multiselect-3-option-1" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-1" name="multiselect_3" type="checkbox" value="2271" title="Amelia Stein" checked="checked" aria-selected="true"><span>Amelia Stein</span></label></li><li class=" "><label for="ui-multiselect-3-option-2" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-2" name="multiselect_3" type="checkbox" value="2253" title="Amy Etinger"><span>Amy Etinger</span></label></li><li class=" "><label for="ui-multiselect-3-option-3" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-3" name="multiselect_3" type="checkbox" value="2239" title="Andrew Madrid"><span>Andrew Madrid</span></label></li><li class=" "><label for="ui-multiselect-3-option-4" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-4" name="multiselect_3" type="checkbox" value="2274" title="Angelique Ambrosio"><span>Angelique Ambrosio</span></label></li><li class=" "><label for="ui-multiselect-3-option-5" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-5" name="multiselect_3" type="checkbox" value="2282" title="Brooke Danielson"><span>Brooke Danielson</span></label></li><li class=" "><label for="ui-multiselect-3-option-6" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-6" name="multiselect_3" type="checkbox" value="2176" title="Caroline Carey"><span>Caroline Carey</span></label></li><li class=" "><label for="ui-multiselect-3-option-7" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-7" name="multiselect_3" type="checkbox" value="2276" title="Christina Shanahan"><span>Christina Shanahan</span></label></li><li class=" "><label for="ui-multiselect-3-option-8" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-8" name="multiselect_3" type="checkbox" value="2287" title="Danielle Frappier"><span>Danielle Frappier</span></label></li><li class=" "><label for="ui-multiselect-3-option-9" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-9" name="multiselect_3" type="checkbox" value="2177" title="Diana Takach"><span>Diana Takach</span></label></li><li class=" "><label for="ui-multiselect-3-option-10" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-10" name="multiselect_3" type="checkbox" value="2286" title="Eleanor Franko"><span>Eleanor Franko</span></label></li><li class=" "><label for="ui-multiselect-3-option-11" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-11" name="multiselect_3" type="checkbox" value="2174" title="Elise Wang"><span>Elise Wang</span></label></li><li class=" "><label for="ui-multiselect-3-option-12" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-12" name="multiselect_3" type="checkbox" value="2189" title="Erika Fox"><span>Erika Fox</span></label></li><li class=" "><label for="ui-multiselect-3-option-13" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-13" name="multiselect_3" type="checkbox" value="2226" title="Erin Lynch"><span>Erin Lynch</span></label></li><li class=" "><label for="ui-multiselect-3-option-14" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-14" name="multiselect_3" type="checkbox" value="2229" title="Erin Williams"><span>Erin Williams</span></label></li><li class=" "><label for="ui-multiselect-3-option-15" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-15" name="multiselect_3" type="checkbox" value="2225" title="Eunsun Gi"><span>Eunsun Gi</span></label></li><li class=" "><label for="ui-multiselect-3-option-16" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-16" name="multiselect_3" type="checkbox" value="2179" title="Eve Loughran"><span>Eve Loughran</span></label></li><li class=" "><label for="ui-multiselect-3-option-17" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-17" name="multiselect_3" type="checkbox" value="2231" title="Gabriela Ponce"><span>Gabriela Ponce</span></label></li><li class=" "><label for="ui-multiselect-3-option-18" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-18" name="multiselect_3" type="checkbox" value="2262" title="Hal Miller"><span>Hal Miller</span></label></li><li class=" "><label for="ui-multiselect-3-option-19" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-19" name="multiselect_3" type="checkbox" value="2228" title="Hannah Salkovitz"><span>Hannah Salkovitz</span></label></li><li class=" "><label for="ui-multiselect-3-option-20" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-20" name="multiselect_3" type="checkbox" value="2173" title="Janice Chou"><span>Janice Chou</span></label></li><li class=" "><label for="ui-multiselect-3-option-21" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-21" name="multiselect_3" type="checkbox" value="2172" title="Jennifer Williams"><span>Jennifer Williams</span></label></li><li class=" "><label for="ui-multiselect-3-option-22" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-22" name="multiselect_3" type="checkbox" value="2221" title="Jessica Murphy"><span>Jessica Murphy</span></label></li><li class=" "><label for="ui-multiselect-3-option-23" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-23" name="multiselect_3" type="checkbox" value="2258" title="Jin Lee"><span>Jin Lee</span></label></li><li class=" "><label for="ui-multiselect-3-option-24" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-24" name="multiselect_3" type="checkbox" value="2224" title="Julie Trafford"><span>Julie Trafford</span></label></li><li class=" "><label for="ui-multiselect-3-option-25" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-25" name="multiselect_3" type="checkbox" value="2192" title="Kacie Cellino"><span>Kacie Cellino</span></label></li><li class=" "><label for="ui-multiselect-3-option-26" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-26" name="multiselect_3" type="checkbox" value="2242" title="Katharine Still"><span>Katharine Still</span></label></li><li class=" "><label for="ui-multiselect-3-option-27" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-27" name="multiselect_3" type="checkbox" value="2257" title="Kathryn Hurni"><span>Kathryn Hurni</span></label></li><li class=" "><label for="ui-multiselect-3-option-28" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-28" name="multiselect_3" type="checkbox" value="2234" title="Katie Ammons"><span>Katie Ammons</span></label></li><li class=" "><label for="ui-multiselect-3-option-29" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-29" name="multiselect_3" type="checkbox" value="2227" title="Katlin Burks"><span>Katlin Burks</span></label></li><li class=" "><label for="ui-multiselect-3-option-30" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-30" name="multiselect_3" type="checkbox" value="2245" title="Katy Lyons"><span>Katy Lyons</span></label></li><li class=" "><label for="ui-multiselect-3-option-31" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-31" name="multiselect_3" type="checkbox" value="2243" title="Kristin Leh"><span>Kristin Leh</span></label></li><li class=" "><label for="ui-multiselect-3-option-32" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-32" name="multiselect_3" type="checkbox" value="2281" title="Leah Furman"><span>Leah Furman</span></label></li><li class=" "><label for="ui-multiselect-3-option-33" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-33" name="multiselect_3" type="checkbox" value="2184" title="Leah Robert"><span>Leah Robert</span></label></li><li class=" "><label for="ui-multiselect-3-option-34" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-34" name="multiselect_3" type="checkbox" value="2230" title="Liz Ahluwalia"><span>Liz Ahluwalia</span></label></li><li class=" "><label for="ui-multiselect-3-option-35" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-35" name="multiselect_3" type="checkbox" value="2220" title="Lorraine Thompson"><span>Lorraine Thompson</span></label></li><li class=" "><label for="ui-multiselect-3-option-36" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-36" name="multiselect_3" type="checkbox" value="2175" title="Mei Choong"><span>Mei Choong</span></label></li><li class=" "><label for="ui-multiselect-3-option-37" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-37" name="multiselect_3" type="checkbox" value="2277" title="Melissa Decker"><span>Melissa Decker</span></label></li><li class=" "><label for="ui-multiselect-3-option-38" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-38" name="multiselect_3" type="checkbox" value="2255" title="Niamh O&#39;Sullivan"><span>Niamh O'Sullivan</span></label></li><li class=" "><label for="ui-multiselect-3-option-39" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-39" name="multiselect_3" type="checkbox" value="2232" title="Oliver Vignola"><span>Oliver Vignola</span></label></li><li class=" "><label for="ui-multiselect-3-option-40" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-40" name="multiselect_3" type="checkbox" value="2261" title="Paige Vila"><span>Paige Vila</span></label></li><li class=" "><label for="ui-multiselect-3-option-41" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-41" name="multiselect_3" type="checkbox" value="2216" title="Rishelle Notghi"><span>Rishelle Notghi</span></label></li><li class=" "><label for="ui-multiselect-3-option-42" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-42" name="multiselect_3" type="checkbox" value="2178" title="Russell Poltrack"><span>Russell Poltrack</span></label></li><li class=" "><label for="ui-multiselect-3-option-43" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-43" name="multiselect_3" type="checkbox" value="2207" title="Sarah Rosen"><span>Sarah Rosen</span></label></li><li class=" "><label for="ui-multiselect-3-option-44" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-44" name="multiselect_3" type="checkbox" value="2268" title="Sarahrose Getz"><span>Sarahrose Getz</span></label></li><li class=" "><label for="ui-multiselect-3-option-45" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-45" name="multiselect_3" type="checkbox" value="2278" title="Savanna Quevedo"><span>Savanna Quevedo</span></label></li><li class=" "><label for="ui-multiselect-3-option-46" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-46" name="multiselect_3" type="checkbox" value="2167" title="Suzanne Servelli"><span>Suzanne Servelli</span></label></li><li class=" "><label for="ui-multiselect-3-option-47" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-47" name="multiselect_3" type="checkbox" value="2166" title="Teresa Menichino"><span>Teresa Menichino</span></label></li><li class=" "><label for="ui-multiselect-3-option-48" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-48" name="multiselect_3" type="checkbox" value="2168" title="Treena Lombardo"><span>Treena Lombardo</span></label></li><li class=" "><label for="ui-multiselect-3-option-49" title="" class="ui-corner-all"><input id="ui-multiselect-3-option-49" name="multiselect_3" type="checkbox" value="2213" title="Yuthi Meas"><span>Yuthi Meas</span></label></li></ul></div><div class="ui-multiselect-menu ui-widget ui-widget-content ui-corner-all styled-multi"><div class="ui-widget-header ui-corner-all ui-multiselect-header ui-helper-clearfix"><ul class="ui-helper-reset"><li><a class="ui-multiselect-all" href="https://cp2.retailcloud.net:8443/core/root/index.cfm?pageId=jm&amp;page_layout=vintage#"><span class="ui-icon ui-icon-check"></span><span>Check all</span></a></li><li><a class="ui-multiselect-none" href="https://cp2.retailcloud.net:8443/core/root/index.cfm?pageId=jm&amp;page_layout=vintage#"><span class="ui-icon ui-icon-closethick"></span><span>Uncheck all</span></a></li><li class="ui-multiselect-close"><a href="https://cp2.retailcloud.net:8443/core/root/index.cfm?pageId=jm&amp;page_layout=vintage#" class="ui-multiselect-close"><span class="ui-icon ui-icon-circle-close"></span></a></li></ul></div><ul class="ui-multiselect-checkboxes ui-helper-reset"><li class=" "><label for="ui-multiselect-2-option-0" title="" class="ui-corner-all"><input id="ui-multiselect-2-option-0" name="multiselect_2" type="checkbox" value="1" title="Concrete Team"><span>Concrete Team</span></label></li><li class=" "><label for="ui-multiselect-2-option-1" title="" class="ui-corner-all"><input id="ui-multiselect-2-option-1" name="multiselect_2" type="checkbox" value="3" title="Vince Camuto Edit All Team"><span>Vince Camuto Edit All Team</span></label></li></ul></div><script type="text/javascript" id="">(function(){var b=window.XMLHttpRequest.prototype.open,d=window.XMLHttpRequest.prototype.send;window.XMLHttpRequest.prototype.open=function(){this.method=arguments[0];this.url=arguments[1];return b.apply(this,[].slice.call(arguments))};window.XMLHttpRequest.prototype.send=function(){var a=this,c=arguments[0],b=window.setInterval(function(){4==a.readyState&&(dataLayer.push({event:"ajaxSuccess",eventCategory:"AJAX "+a.method,eventAction:a.url+("POST"==a.method&&c?";"+c:""),eventLabel:a.responseText}),
+clearInterval(b))},1);return d.apply(this,[].slice.call(arguments))}})();</script><style></style></body></html>

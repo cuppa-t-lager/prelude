@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name: trim
+# key: trim
+# group: jQuery
+# --
+$.trim($0)

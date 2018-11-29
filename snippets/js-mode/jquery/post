@@ -1,0 +1,10 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name: post
+# key: post
+# group: jQuery
+# --
+$.post(
+  "",
+  function(data) {
+           $(  ).html( data );
+          });

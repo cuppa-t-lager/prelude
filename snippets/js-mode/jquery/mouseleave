@@ -1,0 +1,8 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : mouseleave
+# key : mouseleave
+# group: jQuery
+# --
+mouseleave(${1:function() {
+	${0:// Act on the event}
+}});

@@ -1,0 +1,18 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : get
+# key : get
+# group: jQuery
+# --
+$.get( "$0", function() {
+    console.debug("success");
+})
+  .done(function() {
+      console.debug("done");
+  })
+  .fail(function() {
+      // ...
+      console.debug("fail");
+  })
+  .always(function() {
+      console.debug("always...");
+  });

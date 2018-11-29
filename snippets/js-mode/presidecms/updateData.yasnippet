@@ -1,0 +1,23 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: updateData
+# key: prud
+# group: preside
+# --
+ updateData(
+     objectName              = "${1:objectName}"
+   , data                    = {$2}
+   , id                      = "${3:id}"
+   , filter                  = "$4"
+   , filterParams            = { $5 }
+   , extraFilters            = [ $6 ]
+   , savedFilters            = [ $7 ]
+   , forceUpdateAll          = ${8:false}
+   , updateManyToManyRecords = ${9:false}
+   , isDraft                 = ${10:false}
+   , useVersioning           = "auto"
+   , versionNumber           = ${11:n}
+   , forceVersionCreation    = ${10:false}
+   , setDateModified         = ${10:true}
+ )
+
+$0

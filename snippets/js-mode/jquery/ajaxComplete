@@ -1,0 +1,8 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : ajaxComplete
+# key : ajaxComplete
+# group: ajax
+# --
+ajaxComplete(function(event, xhr, settings) {
+	${1:// executes whenever an AJAX request completes}
+});

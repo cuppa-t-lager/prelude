@@ -1,0 +1,9 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : keypress
+# key : keypress
+# group: jQuery
+# --
+keypress(${1:function() {
+	${0:// Act on
+	the event}
+}});

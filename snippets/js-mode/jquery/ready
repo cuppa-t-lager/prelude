@@ -1,0 +1,8 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name: ready
+# key: ready
+# group: jQuery
+# --
+jQuery(document).ready(function() {
+    $0
+});

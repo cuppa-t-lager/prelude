@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: var new component
+# key: newcom
+# group: coldfusion
+# --
+var ${2:$(lower-camel-case (file-name-nondirectory yas/text))} = new $1.$2();

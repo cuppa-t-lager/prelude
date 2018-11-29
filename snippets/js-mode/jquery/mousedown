@@ -1,0 +1,8 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : mousedown
+# key : mousedown
+# group: jQuery
+# --
+mousedown(${1:function() {
+	${0:// Act on the event}
+}});

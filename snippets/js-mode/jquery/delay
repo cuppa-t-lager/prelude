@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : delay
+# key : delay
+# group: jQuery
+# --
+.delay($0)

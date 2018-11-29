@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# name: Create column
+# key: sqlcc
+# --
+-----------------------------------------------------------------------------------------------------
+------------------------------------ Add column to ${1:table} ----------------------------------
+-----------------------------------------------------------------------------------------------------
+IF NOT (EXISTS
+	(
+		SELECT 1 FROM sys.columns
+		WHERE Name = N'${2:columnName}'
+    	AND Object_ID = Object_ID(N'[${3:schemaName}].[$1]')
+	)
+)
+BEGIN
+	ALTER TABLE [$3].[$1]
+	ADD "$2" ${4:$$(yas-choose-value '("TINYINT" "SMALLINT" "INT" "BIT" "TIMESTAMP" "DATE" "DECIMAL" "NUMERIC" "MONEY" "SMALLMONEY" "FLOAT" "REAL" "CHAR" "VARCHAR" "TEXT" "NCHAR" "NVARCHAR" "NTEXT" "BINARY" "VARBINARY" "IMAGE" "TIME" "DATE" "DATETIME" "DATETIME2" "SMALLDATETIME"))VARCHAR}(${5:length}) NOT NULL DEFAULT ${6:$$(yas-choose-value '("NULL" "''" "0" ))NULL}
+END
+
+GO
+
+$0

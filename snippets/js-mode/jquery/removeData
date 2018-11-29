@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : removeDate
+# key : removeData
+# group: jQuery
+# --
+removeData('${1:data name}')

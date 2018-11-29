@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : wrapAll
+# key : wrapAll
+# group: jQuery
+# --
+wrapAll('${1:<div class="extra-wrapper"></div>}')

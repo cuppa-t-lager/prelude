@@ -1,0 +1,119 @@
+#filterPanel {
+	position: fixed;
+	width: 243px;
+	top: 0;
+	bottom: 0;
+	background-color: #CCC;
+	color: #333;
+	z-index: 900;
+	-moz-transition: left .4s ease, top .2s ease;
+	-webkit-transition: left .4s ease, top .2s ease;
+	-o-transition: left .4s ease, top .2s ease;
+	transition: left .4s ease, top .2s ease;
+	left: -243px;
+}
+
+.panelActive #filterPanel {
+	left: 0;
+}
+
+#contentPage #filterPanel {
+	top: 101px;
+}
+
+.maximised #contentPage #filterPanel {
+	top: 0;
+}
+
+#filterPanel .handle {
+	position: absolute;
+	top: 0;
+	cursor: pointer;
+	width: 29px;
+	height: 45px;
+	overflow: visible;
+	z-index: 5;
+	background-repeat: no-repeat;
+	background-image: url('../../img/layout/handles.png');
+	right: -29px;
+	background-position: 0 -50px;
+}
+
+.mainContentContainer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	-moz-transition: left .4s ease;
+	-webkit-transition: left .4s ease;
+	-o-transition: left .4s ease;
+	transition: left .4s ease;
+}
+
+.mainContentContainer.withPanel {
+	left: 23px;
+}
+
+.panelActive .mainContentContainer {
+	left: 266px;
+}
+
+.filterContentWrapper {
+	position: absolute;
+	bottom: 42px;
+	top: 40px;
+	left: 0;
+	right: 10px;
+	border-radius: 0 4px 4px 0;
+	background-color: #FFF;
+}
+
+#contentPage .filterContentWrapper {
+	bottom: 59px;
+}
+
+#filterPanel legend,
+#filterPanel .styled-select {
+	margin-bottom: 10px;
+	width: 193px;
+}
+
+#filterPanel legend {
+	line-height: 22px;
+}
+
+#filterPanel .styled-multi {
+	width: 193px;
+	margin-bottom: 10px;
+}
+
+html #filterPanel button.styled-multi.ui-state-default,
+html #filterPanel button.styled-multi.ui-state-hover,
+html #filterPanel button.styled-multi.ui-state-focus,
+html #filterPanel .styled-select.limit,
+#filterPanel .styled-select {
+	background-position: right;
+}
+
+html #filterPanel button.reset-button {
+	margin-left: 6px;
+	padding:0 8px;
+}
+
+.buttonFieldset {
+	position: absolute;
+	bottom: -32px;
+}
+
+#search .buttonFieldset input,
+input[type="button"] {
+	width: 223px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	border: 1px solid #A6A6A6;
+}
+
+.styled-select select.manage-select {
+	margin-left: 4px;
+}

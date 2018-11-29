@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name: parseJSON
+# key: parseJSON
+# group: jQuery
+# --
+$.parseJSON($0)

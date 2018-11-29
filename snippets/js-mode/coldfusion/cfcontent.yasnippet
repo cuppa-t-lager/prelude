@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: content
+# key: cfco
+# group: coldfusion
+# --
+content type="${1:$$(yas-choose-value '("text/html" "text/plain" "text/json" "application/x-shockwave-flash" "application/msword" "image/jpeg"))text/html}" reset = "${2:$$(yas-choose-value '("yes" "no"))yes}" ;
+$0

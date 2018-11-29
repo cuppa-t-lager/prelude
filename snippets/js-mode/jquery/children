@@ -1,0 +1,6 @@
+# contributor Sunil Williams <sunil@sunil.co.nz>
+# name : children
+# key : children
+# group: jQuery
+# --
+.children($0)

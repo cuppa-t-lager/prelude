@@ -1,0 +1,16 @@
+﻿# -*- mode: snippet; require-final-newline: nil -*-
+# name: one-to-many
+# key: one2many
+# group: coldfusion/orm
+# --
+name="$1"
+fieldtype="one-to-many"
+type="array"
+singularName="$2"
+cascade="delete-orphan"
+cfc="$4"
+fkcolumn="$4"
+inverse="${5:true|false}"
+lazy="${6:true|false}";
+
+$0
