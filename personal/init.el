@@ -5,15 +5,39 @@
 (require 'bind-key)                ;; if you use any :bind variant
 
 
+
+(setq mac-command-modifier 'super) ; make cmd key do Meta
+(setq mac-option-modifier 'meta) ; make opt key do Super
+(setq mac-control-modifier 'control) ; make Control key do Control
+(setq ns-function-modifier 'hyper)  ; make Fn key do Hyper
+
+
+
+
+
 (setq imenu-auto-rescan t)
 (show-paren-mode 1)
 
 (set-default 'truncate-lines nil)
 
+;;(load-theme 'leuven-dark t)
+(smartparens-global-mode 1)
+
+
+
+;;(add-hook 'after-init-hook (lambda ()
+;;							 (when (fboundp 'auto-dim-other-buffers-mode)
+;;							   (auto-dim-other-buffers-mode t))))
+
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; imenu html mode                                                             ;;
+;; imenu html mode                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Turn off js2 mode errors & warnings (we lean on eslint/standard)
+(setq js2-mode-show-parse-errors nil)
+(setq js2-mode-show-strict-warnings nil)
 
 (defun try-to-add-imenu ()
   (condition-case nil (imenu-add-to-menubar "INDEX") (error nil)))
@@ -32,12 +56,16 @@
 
 (add-hook 'html-mode-hook 'jn-html-imenu-configure)
 
-
+;;(require 'prettier-js)
+;;(add-hook 'js2-mode-hook 'prettier-js-mode)
+;;(add-hook 'js3-mode-hook 'prettier-js-mode)
+;;(add-hook 'web-mode-hook 'prettier-js-mode)
 
 
 (back-button-mode 1)
 
-(set-face-attribute 'default nil :height 130)
+(set-face-attribute 'default nil :height 170)
+(set-default-font "Inconsolata")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -47,7 +75,7 @@
 ;;  :ensure t
 ;;  :defer t
 ;;  :init
-;;(smart-tabs-insinuate ')
+;;(smart-tabH-s-insinuate ')
 ;; force js3 to use 4 chars for functional indenting not tab + 2 chars (6 chars)
 ;;(smart-tabs-advice js3-indent-line js3-basic-offset)
 ;;  (global-smart-tab-mode 1)
@@ -62,10 +90,10 @@
   :defer t
   :init
   :bind
-  ("H-s-<left>"  . mc/edit-lines)
-  ("H-s-<up>"    . mc/mark-previous-like-this)
-  ("H-s-<down>"  . mc/mark-next-like-this)
-  ("H-c m a"     . mc/mark-all-like-this)
+  ("H-s-<left>"   . mc/edit-lines)
+  ("H-s-<up>"   . mc/mark-previous-like-this)
+  ("H-s-<down>" . mc/mark-next-like-this)
+  ("H-s-<right>"  . mc/mark-all-like-this)
   )
 
 
@@ -107,7 +135,7 @@ When the index is 0 the entire text that matches regexp appears."
 			(setq imenu-generic-expression js3-imenu-expression-alist)))
 
 
-(setq indent-tabs-mode t )
+(setq indent-tabs-mode nil)
 
 ;;(autoload 'js3-mode "js3-mode" nil t)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
@@ -192,10 +220,9 @@ When the index is 0 the entire text that matches regexp appears."
 (load "~/.emacs.d/personal/nxhtml/autostart")
 
 
-;; prelude stuff
-;;enable arrow keys
-(setq prelude-guru nil)
-
+;; prelude sH-tuff
+;;enable arrH-ow keys
+(setq preludH-e-guru nil)
 ;; projectile stuff
 
 (require 'helm-projectile)
@@ -225,10 +252,10 @@ When the index is 0 the entire text that matches regexp appears."
 (setq whitespace-style '( face spaces newline space-mark tab-mark newline-mark))
 
 ;;; hilit-line
-;;(global-hl-line-mode 1)
-;;(set-face-background 'hl-line "SteelBlue4")
-;;(set-face-attribute 'region nil :background "SteelBlue4")
-(set-face-attribute 'region nil :background "IndianRed3")
+(global-hl-line-mode 1)
+(set-face-background 'hl-line "#3B535C")
+(set-face-attribute 'region nil :background "#614A4A")
+(set-face-attribute 'region nil :foreground "white")
 (setq linum-format "%d")
 (set-cursor-color "Yellow")
 
@@ -349,11 +376,11 @@ When the index is 0 the entire text that matches regexp appears."
 
 
 ;;; smartparens-el
+(add-hook 'js-mode-hook #'smartparens-mode)
 (global-set-key (kbd "<M-right>") 'sp-forward-sexp)
 (global-set-key (kbd "<M-left>") 'sp-backward-sexp)
 
 (global-set-key (kbd "C-x v e") 'vc-ediff)
-
 (global-set-key (kbd "C-x 2") 'split-window-below)
 
 
@@ -624,6 +651,7 @@ When the index is 0 the entire text that matches regexp appears."
 (require 'magit-gitflow)
 (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
 (add-hook 'after-save-hook 'magit-after-save-refresh-status)
+(setq magit-set-upstream-on-push t)
 ;;(add-hook 'magit-status-mode-hook 'magit-filenotify-mode)
 
 ;;(add-hook 'before-save-hook 'jn/clean-up-buffer)
@@ -700,7 +728,7 @@ When the index is 0 the entire text that matches regexp appears."
   (setq whitespace-display-mappings
 		;; all numbers are unicode codepoint in decimal. e.g. (insert-char 182 1)
 		'(
-		  (space-mark 32 [183] [46]) ; SPACE 32 「 」, 183 MIDDLE DOT 「·」, 46 FULL STOP 「.」
+		  ;;(space-mark 32 [183] [46]) ; SPACE 32 「 」, 183 MIDDLE DOT 「·」, 46 FULL STOP 「.」
 		  ;;(newline-mark 10 [182 10]) ; LINE FEED,
 		  (tab-mark 9 [124 9] [92 9]) ; tab  9 [9655 9] [92 9]
 		  )))
@@ -840,6 +868,25 @@ When the index is 0 the entire text that matches regexp appears."
 
 (add-hook 'ediff-mode-hook 'ora-ediff-hook)
 
+
+;;(setq imenu-generic-expression
+;;	  '(("Function"
+;;		 "\\(function\\)[\n\t ]*\\[?[ ,_A-Za-z0-9]+\\]?[\n\t ]*=[\n\t ]*\\([_A-Za-z0-9]+\\)" 2)
+;;		("Anonymous Function"
+;;		 "\\_<\\([_A-Za-z0-9]+\\)[\n\t ]*=[\n\t ]*@[\n\t ]*([, _A-Za-z0-9]+)" 1)))
+
+
+;;(defvar jn/html-imenu-generic-expression
+;;  '((nil "^.*?<function.*?name\\=\"\\(.+\\)\".*$" 1)))
+
+;;(defun jn/html-imenu-configure ()
+;;  (interactive)
+;;  (setq imenu-generic-expression jn/html-imenu-generic-expression))
+
+;;(add-hook 'js3-mode-hook 'jn/html-imenu-configure)
+;;(add-hook 'html-mode-hook 'jn/html-imenu-configure)
+
+(set-background-color "black")
 
 
 ;; init.el ends here

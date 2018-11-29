@@ -15,4 +15,5 @@ docker run -it --rm --name \$\{container_name\} \
        -v "\$\{PWD\}/../password-lgk:/usr/share/tomcat7/certs/" \
        -v "\$\{PWD\}/reports:/reports" \
 	   -v "\$\{PWD}/../../artifacts:/root/.CommandBox/artifacts" \
+       --add-host mssql2:172.16.70.43 \
        \$\{image_name\}

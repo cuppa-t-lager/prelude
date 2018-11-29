@@ -1,6 +1,0 @@
-# contributor Sunil Williams <sunil@sunil.co.nz>
-# name : closest
-# key : closest
-# group: jQuery
-# --
-closest($0)

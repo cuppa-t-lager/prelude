@@ -1,6 +1,0 @@
-# contributor Sunil Williams <sunil@sunil.co.nz>
-# name: merge
-# key: merge
-# group: jQuery
-# --
-$.merge($0, $1);

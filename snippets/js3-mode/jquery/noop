@@ -1,6 +1,0 @@
-# contributor Sunil Williams <sunil@sunil.co.nz>
-# name: noop
-# key: noop
-# group: jQuery
-# --
-$.noop()

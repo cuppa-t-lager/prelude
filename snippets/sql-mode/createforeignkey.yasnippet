@@ -16,18 +16,18 @@ IF (NOT EXISTS
 BEGIN
 
 	UPDATE [dbo].[$1]
-	set ${3:Primary key column} = NULL
-	WHERE ${4:Primary key column} in
+	set ${3:Foreign key column} = NULL
+	WHERE $3 in
 	(
-		SELECT fk.$4
+		SELECT fk.$3
 		FROM [dbo].[$1] fk left join [dbo].[$2] pk
-			on (pk.$4 = fk.$3)
+			on (pk.${4:Primary key column} = fk.$3)
 		WHERE pk.$4 IS NULL
 	);
 
 	ALTER TABLE [dbo].[$1]
 	ADD CONSTRAINT FK_$1_$2
-	FOREIGN KEY ($3) references $2 ($4) ;
+	FOREIGN KEY ($3) references $2 ($4)
 		ON DELETE SET NULL
 		ON UPDATE CASCADE;
 END

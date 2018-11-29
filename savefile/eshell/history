@@ -29,3 +29,13 @@ cd ../../
 cd ../../
 git branch
 git diff -w   hotfix/MAN-233-clear-deadline-calendar-cache-when-editing-a-job origin/hotfix/MAN-233-clear-deadline-calendar-cache-when-editing-a-job
+ls
+chmod -R -700 /var/folders/ms/38qnwcjx23l819g8hgny6dbhl4d2yq/T/emacs642157527
+chmod -700 -R /var/folders/ms/38qnwcjx23l819g8hgny6dbhl4d2yq/T/emacs642157527
+chmod -700  /var/folders/ms/38qnwcjx23l819g8hgny6dbhl4d2yq/T/emacs642157527
+chmod -R 700  /var/folders/ms/38qnwcjx23l819g8hgny6dbhl4d2yq/T/emacs642157527
+sudo chmod 700 /var/folders/ms/38qnwcjx23l819g8hgny6dbhl4d2yq/T/emacs642157527/
+sudo chmod -r 700 /var/folders/ms/38qnwcjx23l819g8hgny6dbhl4d2yq/T/emacs642157527/
+sudo chmod 700 /var/folders/ms/38qnwcjx23l819g8hgny6dbhl4d2yq/T/emacs642157527/
+sudo chmod -r 700 /var/folders/ms/38qnwcjx23l819g8hgny6dbhl4d2yq/T/emacs642157527/
+sudo chmod 700 /var/folders/ms/38qnwcjx23l819g8hgny6dbhl4d2yq/T/emacs642157527/

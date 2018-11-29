@@ -2,7 +2,17 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("SubscriptionEmailService.cfc"
+(("function sendNotification( jobID )"
+ (filename . "~/sites/concrete-platform/CP2/core/objects/jobManagement/JobManagement.cfc")
+ (front-context-string . "\n\n		// Defensive")
+ (rear-context-string . "lmode=\"modern\" {")
+ (position . 100112))
+("function setAndSubscribeJobOwnerRole("
+ (filename . "~/sites/concrete-platform/CP2/core/objects/jobManagement/JobManagement.cfc")
+ (front-context-string . "function setAndS")
+ (rear-context-string . "b settings\n	*/\n	")
+ (position . 114697))
+("SubscriptionEmailService.cfc"
  (filename . "~/sites/concrete-platform/CP2/core/objects/subscriptions/SubscriptionEmailService.cfc")
  (front-context-string . "	private compone")
  (rear-context-string . "ientId\n		);\n	}\n\n")
